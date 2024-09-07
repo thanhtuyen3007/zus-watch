@@ -1,0 +1,28 @@
+.wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 9;
+  height: clamp(8rem, 4.4rem + 4.9vw, 10.875rem);
+  background: ;
+  color: #fff;
+  text-align: center;
+  .logo {
+    padding: 10px;
+    font-family: "Playfair Display";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+}
+.navItem {
+  .navItemLink {
+    padding: 15px;
+    font-family: Lato;
+    font-size: 1.6rem;
+    text-transform: capitalize;
+  }
+}
