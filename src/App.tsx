@@ -4,6 +4,8 @@ import { ReactElement } from "react";
 import { DefaultLayout } from "./components/DefaultLayout/DefaultLayout";
 import Home from "./components/Pages/Home/Home";
 import Collections from "./components/Pages/Collections/Collections";
+import News from "./components/Pages/TheBrand/TheBrand";
+import Contact from "./components/Pages/Contact/Contact";
 interface publicRouteType {
   path: string;
   component: () => ReactElement;
@@ -12,6 +14,9 @@ interface publicRouteType {
 const publicRoute: publicRouteType[] = [
   { path: "/", component: Home },
   { path: "/collections", component: Collections },
+  { path: "/thebrand", component: Collections },
+  { path: "/news", component: News },
+  { path: "/contact", component: Contact },
 ];
 function App() {
   return (

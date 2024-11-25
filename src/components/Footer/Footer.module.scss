@@ -1,0 +1,25 @@
+.wrapper {
+  background: #d9d9d9;
+  color: #203c4f;
+  font-size: 1.5rem;
+  line-height: 166.667%; /* 166.667% */
+  .brandName {
+    color: #203c4f;
+    /* logo */
+    font-family: "Playfair Display";
+    font-size: 3.2rem;
+    font-weight: 600;
+    padding: 20px 20px 15px 0;
+    text-transform: uppercase;
+  }
+  .info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    line-height: 40px;
+    .icon {
+      padding: 0 10px;
+    }
+  }
+}

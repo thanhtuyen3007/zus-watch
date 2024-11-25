@@ -7,20 +7,22 @@
   right: 0;
   left: 0;
   z-index: 9;
-  // min-height: height.$header-height;
+  padding: 0;
+  max-height: height.$header-height;
   background-color: color.$primaryColor;
   color: #fff;
 
   .logo {
     padding: 10px;
     font-family: "Playfair Display";
-    font-size: 32px;
+    font-size: 3.2rem;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
     text-transform: uppercase;
   }
   .icon {
+    padding: 2rem;
     color: color.$textWhite;
     font-size: 2rem;
   }
