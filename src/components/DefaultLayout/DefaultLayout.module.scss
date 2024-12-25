@@ -1,3 +1,5 @@
+@use "../basecss/height";
+
 .content {
-  margin-top: 87px;
+  margin-top: height.$header-height;
 }

@@ -14,12 +14,20 @@
   }
   .info {
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-shrink: 0;
     line-height: 40px;
+    padding: 0;
     .icon {
       padding: 0 10px;
+    }
+  }
+}
+
+@media (min-width: 767.98px) {
+  .wrapper {
+    .info {
+      justify-content: center;
     }
   }
 }

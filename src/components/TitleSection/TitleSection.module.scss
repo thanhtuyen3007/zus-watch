@@ -1,0 +1,22 @@
+@use "../basecss/color"; // Import color variables
+
+.container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  color: color.$textBlack; // Set text color to black
+  .title {
+    font-size: 2.2rem;
+    line-height: normal;
+    text-transform: capitalize;
+  }
+  .desc {
+    font-size: 1.8rem;
+    letter-spacing: 0.44px;
+    text-transform: capitalize;
+  }
+}

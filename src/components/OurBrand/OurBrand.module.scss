@@ -1,0 +1,36 @@
+@use "../basecss/color"; // Import color module
+
+.wrapper {
+  width: 100%;
+}
+
+.wrapperItem {
+  position: relative;
+  img {
+    width: 100%; // Set image width to 100%
+    height: 100%; // Set image height to auto
+    max-height: 641.5px;
+    opacity: 0.9;
+  }
+  .content {
+    position: absolute;
+    top: 50%; // Set top position to 50%
+    left: 30%; // Set left position to 50%
+    transform: translate(-50%, -50%); // Translate the position to center
+    text-align: center;
+    z-index: 1;
+    .title {
+      padding: 15px;
+      color: color.$textWhite; // Set text color to white
+      font-family: "Playfair Display";
+      font-size: 3.6rem;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+      text-transform: uppercase;
+      &:hover {
+        transform: scale(1.05); // Scale the text to 1.1
+      }
+    }
+  }
+}
