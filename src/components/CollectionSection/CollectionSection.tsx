@@ -4,7 +4,7 @@ import styles from "./CollectionSection.module.scss";
 import TitleSection from "../TitleSection/TitleSection";
 import { Container, Row, Col } from "react-bootstrap";
 import images from "../../assets";
-import { ProductItem } from "../ProductItem/ProductItem";
+import { CollectionItem } from "../CollectionItem/CollectionItem";
 
 const CollectionSection: React.FC = () => {
   const collections = [
@@ -37,7 +37,7 @@ const CollectionSection: React.FC = () => {
       <Row>
         {collections.map((collection) => (
           <Col md={4} key={collection.id}>
-            <ProductItem data={collection} />
+            <CollectionItem data={collection} />
           </Col>
         ))}
       </Row>

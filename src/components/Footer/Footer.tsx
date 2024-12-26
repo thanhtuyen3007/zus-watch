@@ -3,11 +3,7 @@ import clsx from "clsx";
 import styles from "./Footer.module.scss";
 import { Container, Row, Col } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faLocationDot,
-  faMessage,
-  faPhone,
-} from "@fortawesome/free-solid-svg-icons";
+import { faLocationDot, faMessage, faPhone } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
 const Footer = (): ReactElement => {
@@ -16,7 +12,7 @@ const Footer = (): ReactElement => {
       <Container fluid>
         <Row>
           <Col md={6}>
-            <Link to={"/"} className={clsx(styles.brandName)}>
+            <Link to="/" className={clsx(styles.brandName)}>
               zus
             </Link>
             <p>

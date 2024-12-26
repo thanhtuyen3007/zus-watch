@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import clsx from "clsx";
-import styles from "./ProductItem.module.scss";
+import styles from "./CollectionItem.module.scss";
 
 type ProductData = {
   id: number;
@@ -10,7 +10,7 @@ type ProductData = {
   link: string;
 };
 
-export const ProductItem: React.FC<{ data: ProductData }> = ({ data }) => {
+export const CollectionItem: React.FC<{ data: ProductData }> = ({ data }) => {
   return (
     <div className={clsx(styles.container)}>
       <img className={clsx(styles.img)} src={data.url} alt={data.name} />
