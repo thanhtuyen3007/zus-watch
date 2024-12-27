@@ -20,7 +20,7 @@ const Home = (): ReactElement => {
       ></Banner>
       {/* TheBrand component */}
       <OurBrand />
-      <CollectionSection/>
+      <CollectionSection />
     </Container>
   );
 };

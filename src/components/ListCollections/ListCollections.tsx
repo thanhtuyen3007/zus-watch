@@ -1,19 +1,15 @@
 import React from 'react'
 import { Row, Col } from 'react-bootstrap'
 import { CollectionItem } from '../CollectionItem/CollectionItem';
+import { CollectionItemType } from '../../data';
 
-type Collection = {
-    id: number;
-    name: string;
-    url: string;
-    link: string;
+
+
+interface ListCollectionsProps {
+  data: CollectionItemType[];
 }
 
-type ListCollectionsProps = {
-    data: Collection[];
-}
-
-export const ListCollections = ({data} : ListCollectionsProps) => {
+export const ListCollections = ({ data }: ListCollectionsProps) => {
   return (
     <div>
         <Row>

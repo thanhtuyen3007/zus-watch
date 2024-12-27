@@ -1,20 +1,24 @@
-import React from 'react';
-import data from './data';
+import data from "./data";
 
-const CollectionsList: React.FC = () => {
-  // Get the collection names from the data
-  const collectionNames = Object.keys(data.collections);
+// type CollectionItemType = {
+//   id: number;
+//   name: string;
+//   url: string;
+//   link: string;
+//   product: Array<{
+//     id: number;
+//     name: string;
+//     price: number;
+//     description: string;
+//     image: string;
+//   }>;
+// };
 
-  return (
-    <div>
-      <h1>Collections</h1>
-      <ul>
-        {collectionNames.map((name) => (
-          <li key={name}>{name}</li>
-        ))}
-      </ul>
-    </div>
-  );
+export const collectionsList = () => {
+  const collectionsData = [];
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  for (const [key, value] of Object.entries(data.collections)) {
+    collectionsData.push(value);
+  }
+  return collectionsData;
 };
-
-export default CollectionsList;

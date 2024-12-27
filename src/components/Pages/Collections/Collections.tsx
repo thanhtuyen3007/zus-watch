@@ -6,28 +6,10 @@ import SideBar from "../../SideBar/SideBar";
 import { Slider } from "../../Slider/Slider";
 import { ListCollections } from "../../ListCollections/ListCollections";
 import styles from "./Collections.module.scss";
-import images from "../../../assets";
+import { collectionsList } from "../../../CollectionsList";
 
-const collections = [
-  {
-    id: 1,
-    name: "classics",
-    url: images.classic,
-    link: "/",
-  },
-  {
-    id: 2,
-    name: "profecionals",
-    url: images.profectinal,
-    link: "/",
-  },
-  {
-    id: 3,
-    name: "watch by theme",
-    url: images.theme,
-    link: "/",
-  },
-];
+
+
 const Collections = (): ReactElement => {
   return (
     <section className={clsx(styles.wrapper)}>
@@ -42,7 +24,7 @@ const Collections = (): ReactElement => {
             <SideBar />
           </Col>
           <Col md={8}>
-            <ListCollections data={collections} />
+            <ListCollections data={collectionsList()} />
           </Col>
         </Row>
       </Container>
