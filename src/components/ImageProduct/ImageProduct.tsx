@@ -5,9 +5,9 @@ import styles from "./ImageProduct.module.scss";
 type ImageProductProps = {
   src: string;
   alt: string;
-  classname: string;
-  fallback: string;
-  props: React.ImgHTMLAttributes<HTMLImageElement>;
+  classname?: string;
+  fallback?: string;
+  props?: React.ImgHTMLAttributes<HTMLImageElement>;
 };
 export const ImageProduct = ({
   src,

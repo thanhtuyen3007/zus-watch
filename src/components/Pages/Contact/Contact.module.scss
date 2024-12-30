@@ -1,0 +1,8 @@
+@use "../../basecss/height";
+// @use "../../basecss/color";
+.contactSection {
+  margin-top: height.$margin-top-value;
+  padding: 5rem;
+}
+
+

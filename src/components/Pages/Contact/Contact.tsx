@@ -1,10 +1,17 @@
-import React from "react";
-import { Slider } from "../../Slider/Slider";
+import styles from "./Contact.module.scss";
+import clsx from "clsx";
+import { FormContact } from "../../FormContact/FormContact";
+import TitleSection from "../../TitleSection/TitleSection";
 
 const Contact = () => {
   return (
-    <section>
-      <Slider url="https://images.unsplash.com/photo-1580287017488-706e4d7598a1?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
+    <section className={clsx(styles.contactSection)}>
+      <TitleSection
+        title="Contact Us"
+        desc="Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression."
+      />
+      {/* Render the contact form */}
+      <FormContact />
     </section>
   );
 };

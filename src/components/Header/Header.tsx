@@ -13,9 +13,9 @@ type NavLinkType = {
 
 // List of navigation links
 const navLinkList: NavLinkType[] = [
+  { path: "/", title: "home" },
   { path: "/collections", title: "collections" },
   { path: "/the-brand", title: "the brand" },
-  { path: "/news", title: "news" },
   { path: "/contact", title: "contact" },
 ];
 

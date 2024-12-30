@@ -10,7 +10,7 @@ const Home = (): ReactElement => {
   return (
     <Container fluid className="px-0">
       {/* Slider component */}
-      <Slider url="https://images.unsplash.com/photo-1694886726526-d06ab9870e9a?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"></Slider>
+      <Slider url="https://images.unsplash.com/photo-1682028338306-e748345b7748?q=80&w=1632&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"></Slider>
       {/* Banner component */}
       <Banner
         title="New Collection"
