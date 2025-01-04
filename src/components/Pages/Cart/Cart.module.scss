@@ -1,0 +1,27 @@
+.cartSection {
+  // text-align: center;
+  margin: 0 auto;
+  padding: 2rem;
+  width: 100%;
+  max-width: 1200px;
+}
+.cartTitle {
+  margin-bottom: 3rem;
+  font-family: "Playfair Display";
+  font-size: 4rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  // font-variant: small-caps;
+  text-align: center;
+  text-transform: uppercase;
+}
+@media (max-width: 767.98px) {
+  .cartTitle {
+    font-size: 2rem;
+  }
+  .cartRow {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+}

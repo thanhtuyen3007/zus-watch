@@ -3,7 +3,7 @@ import clsx from "clsx";
 import styles from './TitleSection.module.scss'
 type TitleSectionProps = {
   title: string;
-  desc: string;
+  desc?: string;
 };
 
 const TitleSection: React.FC<TitleSectionProps> = ({ title, desc }) => {

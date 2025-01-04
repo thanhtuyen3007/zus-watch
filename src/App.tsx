@@ -5,6 +5,7 @@ import Home from "./components/Pages/Home/Home";
 import Collections from "./components/Pages/Collections/Collections";
 import TheBrand from "./components/Pages/TheBrand/TheBrand";
 import Contact from "./components/Pages/Contact/Contact";
+import Cart from "./components/Pages/Cart/Cart";
 
 interface publicRouteType {
   path: string;
@@ -16,6 +17,7 @@ const publicRoute: publicRouteType[] = [
   { path: "/collections", component: Collections },
   { path: "/the-brand", component: TheBrand },
   { path: "/contact", component: Contact },
+  { path: "/cart", component: Cart },
 ];
 function App() {
   return (

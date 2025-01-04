@@ -1,0 +1,72 @@
+@use "../basecss/height";
+@use "../basecss/color";
+
+.contactSection {
+  margin-top: height.$margin-top-value;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.formWrapper {
+  background-color: #fff;
+}
+
+.formTitle {
+  text-align: left;
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 3.75rem; /* 150% */
+  letter-spacing: 0.08rem;
+  text-transform: capitalize;
+}
+
+.formGroup {
+  margin-bottom: 15px;
+}
+
+.formLabel {
+  display: block;
+
+  margin-bottom: 5px;
+  font-size: 1.4rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 33px; /* 150% */
+  letter-spacing: 0.44px;
+  text-transform: capitalize;
+}
+
+.formInput,
+.formTextarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 40px;
+}
+
+.formInput::placeholder,
+.formTextarea::placeholder {
+  font-size: 1.4rem;
+  color: #999;
+}
+.formInput:active,
+.formTextarea:active {
+  border: 1px solid #ccc;
+}
+
+.formButton {
+  display: flex;
+  justify-self: center;
+  font-size: 1.6rem;
+  padding: 10px 30px;
+  background-color: color.$primaryColor;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.formButton:hover {
+  opacity: 0.8;
+  transform: scale(1.05);
+}
