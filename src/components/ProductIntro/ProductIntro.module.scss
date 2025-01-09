@@ -1,0 +1,82 @@
+@use "../../basecss/color";
+
+.productIntro {
+  padding: 20px;
+  margin-bottom: 20px;
+  font-size: 1.6rem;
+  font-style: normal;
+  line-height: 2.0625rem; /* 150% */
+  letter-spacing: 0.0275rem;
+  text-transform: capitalize;
+}
+.productImage {
+  width: 100%;
+}
+.productInfo {
+  position: relative;
+}
+
+.productName {
+  font-family: "Playfair Display";
+  font-size: 2.625rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: capitalize;
+}
+
+.productPrice {
+  font-family: "Alike";
+  font-size: 2rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: lowercase;
+}
+
+.addToBagButton {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 15px 0;
+  font-size: 1.6rem;
+  background-color: color.$primaryColor;
+  color: color.$textWhite;
+  border: none;
+  cursor: pointer;
+}
+
+.addToBagButton:hover {
+  color: color.$textBlue;
+  background-color: color.$hoverColor;
+}
+.addToBagButton:active {
+  color: color.$textBlue;
+  background-color: color.$hoverColor;
+}
+
+.productDetails,
+.productSpecifications {
+  margin-top: 20px;
+}
+
+.detailsTitle,
+.specificationsTitle {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.detailsText {
+  line-height: 1.6;
+}
+
+.specificationsList {
+  list-style-type: none;
+  padding: 0;
+}
+
+.specificationsList li {
+  line-height: 1.6;
+  margin-bottom: 5px;
+}

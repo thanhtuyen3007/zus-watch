@@ -8,7 +8,9 @@
   align-items: center;
   text-align: center;
   gap: 10px;
-  color: color.$textBlack; // Set text color to black
+  color: color.$textBlack; 
+  margin-top: 2rem;
+  margin-bottom: 2rem;
   .title {
     font-size: 2.2rem;
     line-height: normal;

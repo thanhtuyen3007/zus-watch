@@ -1,6 +1,6 @@
 import images from "./assets";
 
-export type Watch = {
+export type WatchProduct = {
   id: number;
   name: string;
   price: number;
@@ -14,7 +14,7 @@ export type CollectionItemType = {
   title: string;
   link: string;
   image: string;
-  products: Watch[];
+  products: WatchProduct[];
 };
 
 export type Collections = {

@@ -3,6 +3,7 @@ import clsx from "clsx";
 import { FormContact } from "../../FormContact/FormContact";
 import TitleSection from "../../TitleSection/TitleSection";
 import { Slider } from "../../Slider/Slider";
+import ProductIntro from "../../ProductIntro/ProductIntro";
 
 const Contact = () => {
   return (

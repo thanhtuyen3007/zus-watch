@@ -6,6 +6,7 @@ import Collections from "./components/Pages/Collections/Collections";
 import TheBrand from "./components/Pages/TheBrand/TheBrand";
 import Contact from "./components/Pages/Contact/Contact";
 import Cart from "./components/Pages/Cart/Cart";
+import ProductIntro from "./components/ProductIntro/ProductIntro";
 
 interface publicRouteType {
   path: string;
