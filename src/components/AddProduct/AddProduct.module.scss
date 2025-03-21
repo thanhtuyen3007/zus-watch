@@ -1,0 +1,50 @@
+@use "../../assets/basecss/color"; // Import color variables
+.title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: color.$textBlack;
+}
+
+.input,
+.textarea,
+.select {
+  padding: 7px;
+  font-size: 1.6rem;
+  border: 1px solid color.$borderColor;
+}
+
+.textarea {
+  resize: vertical;
+}
+
+.submitButton {
+  max-width: 275px;
+  padding: 10px 15px;
+  font-size: 1.4rem;
+  color: #fff;
+  background-color: color.$blue;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.submitButton:hover {
+  background-color: color.$primaryColor;
+}

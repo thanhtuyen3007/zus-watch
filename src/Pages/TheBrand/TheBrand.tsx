@@ -1,10 +1,10 @@
-import React, { ReactElement } from "react";
-import styles from "./TheBrand.module.scss";
 import clsx from "clsx";
-import { Slider } from "../../Slider/Slider";
+import { ReactElement } from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import TitleSection from "../../TitleSection/TitleSection";
-import { ImageProduct } from "../../ImageProduct/ImageProduct";
+import styles from "./TheBrand.module.scss";
+import { Slider } from "../../components/Slider/Slider";
+import TitleSection from "../../components/TitleSection/TitleSection";
+import { ImageProduct } from "../../components/ImageProduct/ImageProduct";
 
 const TheBrand = (): ReactElement => {
   return (

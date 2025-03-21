@@ -1,12 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { DefaultLayout } from "./components/DefaultLayout/DefaultLayout";
-import Home from "./components/Pages/Home/Home";
-import Collections from "./components/Pages/Collections/Collections";
-import TheBrand from "./components/Pages/TheBrand/TheBrand";
-import Contact from "./components/Pages/Contact/Contact";
-import Cart from "./components/Pages/Cart/Cart";
-import ProductIntro from "./components/ProductIntro/ProductIntro";
+import DefaultLayout from "./layouts/DefaultLayout/DefaultLayout";
+import Home from "./Pages/Home/Home";
+import Watch from "./Pages/Watch/Watch";
+import TheBrand from "./Pages/TheBrand/TheBrand";
+import Contact from "./Pages/Contact/Contact";
+import Cart from "./Pages/Cart/Cart";
+import Admin from "./Pages/Admin/Admin";
 
 interface publicRouteType {
   path: string;
@@ -15,7 +15,7 @@ interface publicRouteType {
 
 const publicRoute: publicRouteType[] = [
   { path: "/", component: Home },
-  { path: "/collections", component: Collections },
+  { path: "/watches", component: Watch },
   { path: "/the-brand", component: TheBrand },
   { path: "/contact", component: Contact },
   { path: "/cart", component: Cart },
@@ -39,6 +39,7 @@ function App() {
               />
             );
           })}
+          <Route path="/admin" element={<Admin />} />
         </Routes>
       </div>
     </Router>

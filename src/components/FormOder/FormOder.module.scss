@@ -1,5 +1,5 @@
-@use "../basecss/height";
-@use "../basecss/color";
+@use "../../assets/basecss/height"; // Import height variables
+@use "../../assets/basecss/color"; // Import color variables
 
 .contactSection {
   margin-top: height.$margin-top-value;

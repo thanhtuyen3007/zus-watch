@@ -1,14 +1,13 @@
-import React, { ReactElement } from "react";
+import { ReactElement } from "react";
 import clsx from "clsx";
 import { Col, Container, Row } from "react-bootstrap";
-import TitleSection from "../../TitleSection/TitleSection";
-import SideBar from "../../SideBar/SideBar";
-import { Slider } from "../../Slider/Slider";
-import { ListCollections } from "../../ListCollections/ListCollections";
-import styles from "./Collections.module.scss";
-import { collectionsList } from "../../../CollectionsList";
+import TitleSection from "../../components/TitleSection/TitleSection";
+import SideBar from "../../components/SideBar/SideBar";
+import { Slider } from "../../components/Slider/Slider";
+import styles from "./Watch.module.scss";
+import ListProducts from "../../components/ListProducts/ListProducts";
 
-const Collections = (): ReactElement => {
+const Watch = (): ReactElement => {
   return (
     <section className={clsx(styles.wrapper)}>
       <Slider url="https://images.unsplash.com/photo-1682915849551-cea87c145b34?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
@@ -22,7 +21,7 @@ const Collections = (): ReactElement => {
             <SideBar />
           </Col>
           <Col md={8}>
-            <ListCollections data={collectionsList()} />
+            <ListProducts />
           </Col>
         </Row>
       </Container>
@@ -30,4 +29,4 @@ const Collections = (): ReactElement => {
   );
 };
 
-export default Collections;
+export default Watch;

@@ -1,9 +1,9 @@
 import { ReactElement } from "react";
 import { Container } from "react-bootstrap";
-import { Slider } from "../../Slider/Slider";
-import { Banner } from "../../Banner/Banner";
-import { OurBrand } from "../../OurBrand/OurBrand";
-import CollectionSection from "../../CollectionSection/CollectionSection";
+import { Slider } from "../../components/Slider/Slider";
+import { Banner } from "../../components/Banner/Banner";
+import { OurBrand } from "../../components/OurBrand/OurBrand";
+import CollectionSection from "../../components/CollectionSection/CollectionSection";
 
 // Home component
 const Home = (): ReactElement => {

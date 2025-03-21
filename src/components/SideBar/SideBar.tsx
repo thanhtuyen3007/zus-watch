@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import clsx from "clsx";
 import styles from "./SideBar.module.scss";
-import data from "../../data"; // Import data
+import {dataCollections} from "../../data"; // Import data
 
 // Collection options
 const collections: string[] = [
   "all",
-  ...Object.keys(data.collections), // Use keys from data.collections
+  ...Object.keys(dataCollections), // Use keys from data.collections
 ];
 
 const SideBar: React.FC = () => {

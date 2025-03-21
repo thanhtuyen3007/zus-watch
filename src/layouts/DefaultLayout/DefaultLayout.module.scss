@@ -1,0 +1,5 @@
+@use "../../assets/basecss/height"; // Import height variables
+
+.content {
+  margin-top: height.$header-height;
+}

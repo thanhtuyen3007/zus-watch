@@ -1,5 +1,5 @@
-@use "../basecss/color"; // Import color variables
-@use "../basecss/height"; // Import height variables
+@use "../../assets/basecss/color"; // Import color variables
+@use "../../assets/basecss/height";  // Import height variables
 $navLink-width: clamp(
   8rem,
   4.4rem + 4.9vw,

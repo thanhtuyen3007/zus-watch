@@ -1,11 +1,11 @@
 import styles from "./Contact.module.scss";
 import clsx from "clsx";
-import { FormContact } from "../../FormContact/FormContact";
-import TitleSection from "../../TitleSection/TitleSection";
-import { Slider } from "../../Slider/Slider";
-import ProductIntro from "../../ProductIntro/ProductIntro";
+import { FormContact } from "../../components/FormContact/FormContact";
+import TitleSection from "../../components/TitleSection/TitleSection";
+import { Slider } from "../../components/Slider/Slider";
+import { ReactElement } from "react";
 
-const Contact = () => {
+const Contact = () : ReactElement => {
   return (
     <section className={clsx(styles.contactSection)}>
       <Slider url="https://images.unsplash.com/photo-1597695196353-cf1ac6b2acaa?q=80&w=1474&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />

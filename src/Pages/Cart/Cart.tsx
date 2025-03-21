@@ -1,10 +1,10 @@
-import React from "react";
+import { ReactElement } from "react";
 import clsx from "clsx";
 import styles from "./Cart.module.scss";
-import ItemCart from "../../ItemCart/ItemCart";
+import ItemCart from "../../components/ItemCart/ItemCart";
 import { Col, Container, Row } from "react-bootstrap";
-import { FormOder } from "../../FormOder/FormOder";
-const Cart: React.FC = () => {
+import { FormOder } from "../../components/FormOder/FormOder";
+const Cart = (): ReactElement => {
   return (
     <Container className={clsx(styles.cartSection)}>
       <h1 className={clsx(styles.cartTitle)}>shopping bag</h1>

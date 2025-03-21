@@ -1,0 +1,37 @@
+@use "../../assets/basecss/color";
+.adminPage {
+  display: flex;
+}
+
+.sidebar {
+  width: 250px;
+  color: color.$textBlack;
+  background-color: color.$white;
+  padding: 20px;
+}
+
+.sidebarTitle {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.navList {
+  list-style: none;
+  padding: 0;
+}
+
+.navItem {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.navItem:hover {
+  font-weight: 600;
+}
+.mainContent {
+  flex: 1;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
