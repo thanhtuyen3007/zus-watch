@@ -1,14 +1,15 @@
-@use "../../assets/basecss/color"; 
+@use "../../assets/basecss/color";
 .container {
   width: 100%;
   padding-top: 1.5rem;
   padding-bottom: 3rem;
+  color: color.$textBlack;
   .img {
     width: 100%;
     height: 100%;
   }
   .name {
-    color: color.$textBlack;
+ 
     margin-top: 2rem;
     font-size: 1.8rem;
     font-style: normal;

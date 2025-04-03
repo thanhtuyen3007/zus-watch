@@ -7,6 +7,7 @@ import TheBrand from "./Pages/TheBrand/TheBrand";
 import Contact from "./Pages/Contact/Contact";
 import Cart from "./Pages/Cart/Cart";
 import Admin from "./Pages/Admin/Admin";
+// import ProductIntro from "./components/ProductIntro/ProductIntro";
 
 interface publicRouteType {
   path: string;
@@ -40,6 +41,7 @@ function App() {
             );
           })}
           <Route path="/admin" element={<Admin />} />
+          {/* <Route path="/product/:id" element={<ProductIntro />} /> */}
         </Routes>
       </div>
     </Router>

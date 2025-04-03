@@ -1,93 +1,69 @@
-import { v4 as uuidv4 } from "uuid";
-import images from "./assets";
-
-export type WatchProduct = {
-  id: string;
-  name: string;
-  price: number;
-  description: string;
-  image: string;
-};
-
-export type CollectionItemType = {
-  id: string;
-  title: string;
-  link: string;
-  image: string;
-  products: WatchProduct[];
-};
-
-export type Collections = {
-  classic: CollectionItemType;
-  professionals: CollectionItemType;
-  watch_by_theme: CollectionItemType;
-};
-
-export const dataCollections: Collections = {
-  classic: {
-    id: uuidv4(),
-    title: "Classic",
-    link: "/classic",
-    image: images.classic,
-    products: [
+import { v4 as uuid } from "uuid";
+export const Products = [
+  {
+    id: "c1",
+    name: "classics",
+    description: "A collection of classic watches",
+    image:
+      "https://res.cloudinary.com/djka3a0ah/image/upload/v1743328206/pvhmedgxj9syqo0upt9f.jpg",
+    watches: [
       {
-        id: uuidv4(),
-        name: "Classic Watch 1",
+        id: uuid(),
+        name: "Classic Watch",
         price: 199.99,
-        description: "A timeless classic watch.",
-        image: "classic1.jpg",
-      },
-      {
-        id: uuidv4(),
-        name: "Classic Watch 2",
-        price: 249.99,
-        description: "Elegant and sophisticated.",
-        image: "classic2.jpg",
+        description: "A classic watch with a timeless design.",
+        productDetails:
+          " Stainless steel case, leather strap, water-resistant.",
+        warranty: "2",
+        stock: 50,
+        category: "classics",
+        imageUrl:
+          "https://res.cloudinary.com/djka3a0ah/image/upload/v1743328206/pvhmedgxj9syqo0upt9f.jpg",
       },
     ],
   },
-  professionals: {
-    id: uuidv4(),
-    title: "Professionals",
-    link: "/professionals",
-    image: images.professional,
-    products: [
+  {
+    id: "c2",
+    name: "Contemporary",
+    description: "Delivering elegance and sophistication.",
+    image:
+      "https://res.cloudinary.com/djka3a0ah/image/upload/v1743328206/pvhmedgxj9syqo0upt9f.jpg",
+    watches: [
       {
-        id: uuidv4(),
-        name: "Professional Watch 1",
+        id: uuid(),
+        name: "Contemporary Watch",
         price: 299.99,
-        description: "Perfect for professionals.",
-        image: "professional1.jpg",
-      },
-      {
-        id: uuidv4(),
-        name: "Professional Watch 2",
-        price: 349.99,
-        description: "Stylish and functional.",
-        image: "professional2.jpg",
-      },
-    ],
-  },
-  watch_by_theme: {
-    id: uuidv4(),
-    title: "Watch by Theme",
-    link: "/watch_by_theme",
-    image: images.theme,
-    products: [
-      {
-        id: uuidv4(),
-        name: "Sport Watch",
-        price: 199.99,
-        description: "Ideal for sports enthusiasts.",
-        image: "sport.jpg",
-      },
-      {
-        id: uuidv4(),
-        name: "Luxury Watch",
-        price: 499.99,
-        description: "Luxury at its finest.",
-        image: "luxury.jpg",
+        description: "A Contemporary watch with advanced features.",
+        productDetails:
+          " Stainless steel case, leather strap, water-resistant.",
+        warranty: "2",
+        stock: 50,
+        category: "Contemporary",
+        imageUrl:
+          "https://res.cloudinary.com/djka3a0ah/image/upload/v1743328206/pvhmedgxj9syqo0upt9f.jpg",
       },
     ],
   },
-};
+  {
+    id: "c4",
+    name: "theme",
+    description: "A collection of themed watches",
+    image:
+      "https://res.cloudinary.com/djka3a0ah/image/upload/v1743328206/pvhmedgxj9syqo0upt9f.jpg",
+    watches: [
+      {
+        id: uuid(),
+        name: "Themed Watch",
+        price: 249.99,
+        description: "A themed watch with a unique design.",
+        productDetails:
+          " Stainless steel case, leather strap, water-resistant.",
+        warranty: "2",
+        stock: 50,
+        category: "theme",
+        imageUrl:
+          "https://res.cloudinary.com/djka3a0ah/image/upload/v1743328206/pvhmedgxj9syqo0upt9f.jpg",
+      },
+    ],
+  },
+];

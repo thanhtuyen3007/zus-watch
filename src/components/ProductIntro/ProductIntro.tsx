@@ -3,24 +3,18 @@ import clsx from "clsx";
 import styles from "./ProductIntro.module.scss";
 import { Col, Container, Row } from "react-bootstrap";
 import { ImageProduct } from "../ImageProduct/ImageProduct";
+import { useLocation } from "react-router-dom";
 
-interface ProductIntroProps {
-  id: number;
-  name: string;
-  description: string;
-  price: number;
-  image: string;
-  onAddToBag: (id: number) => void;
-}
+const ProductIntro: React.FC = (): ReactElement => {
+  const location = useLocation();
+  const { product } = location.state || {};
 
-const ProductIntro: React.FC<ProductIntroProps> = ({
-  id,
-  name,
-  description,
-  price,
-  image,
-  onAddToBag,
-}): ReactElement => {
+  if (!product) {
+    return <p>Product not found.</p>;
+  }
+
+  const { id, name, description, price, image, onAddToBag } = product;
+
   return (
     <Container className={clsx(styles.productIntro)}>
       <Row>

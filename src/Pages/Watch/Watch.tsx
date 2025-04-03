@@ -1,11 +1,10 @@
 import { ReactElement } from "react";
 import clsx from "clsx";
-import { Col, Container, Row } from "react-bootstrap";
+import {  Container } from "react-bootstrap";
 import TitleSection from "../../components/TitleSection/TitleSection";
-import SideBar from "../../components/SideBar/SideBar";
 import { Slider } from "../../components/Slider/Slider";
 import styles from "./Watch.module.scss";
-import ListProducts from "../../components/ListProducts/ListProducts";
+import CollectionSection from "../../components/CollectionSection/CollectionSection";
 
 const Watch = (): ReactElement => {
   return (
@@ -16,14 +15,7 @@ const Watch = (): ReactElement => {
           title="Collections"
           desc="Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression."
         />
-        <Row>
-          <Col md={4}>
-            <SideBar />
-          </Col>
-          <Col md={8}>
-            <ListProducts />
-          </Col>
-        </Row>
+        <CollectionSection />
       </Container>
     </section>
   );
