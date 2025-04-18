@@ -2,9 +2,9 @@ import clsx from "clsx";
 import styles from "./AddProduct.module.scss";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../../store";
+import { RootState } from "../../redux/store.tsx";
 import UploadImage from "../UploadImage/UploadImage";
-import { addProductSlice } from "./AddProductReducer.tsx";
+// import { addProductSlice } from "./AddProductReducer.tsx";
 import { Watch } from "../../dataType.ts";
 import { v4 as uuid } from "uuid";
 
@@ -16,36 +16,36 @@ const AddProduct = () => {
   const [productDetails, setProductDetails] = useState("");
   const [warranty, setWarranty] = useState(0);
   const [stock, setstock] = useState(0);
-  const imageUrl: string = useSelector(
-    (state: RootState) => state.addImageWatch.imageUrl
-  );
+  // const imageUrl: string = useSelector(
+  //   (state: RootState) => state.addImageWatch.imageUrl
+  // );
 
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
-  const handleSubmitForm = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const newWatch: Watch = {
-      id: uuid(),
-      name: name,
-      price: price,
-      description: description,
-      category: theme,
-      productDetails: productDetails,
-      warranty: warranty,
-      stock: stock,
-      imageUrl: imageUrl,
-    };
-    dispatch(
-      addProductSlice.actions.addProduct({
-        categoryName: theme,
-        product: newWatch,
-      })
-    );
-  };
+  // const handleSubmitForm = (e: React.FormEvent<HTMLFormElement>) => {
+  //   e.preventDefault();
+  //   const newWatch: Watch = {
+  //     id: uuid(),
+  //     name: name,
+  //     price: price,
+  //     description: description,
+  //     category: theme,
+  //     productDetails: productDetails,
+  //     warranty: warranty,
+  //     stock: stock,
+  //     imageUrl: imageUrl,
+  //   };
+    // dispatch(
+    //   addProductSlice.actions.addProduct({
+    //     categoryName: theme,
+    //     product: newWatch,
+    //   })
+    // );
+  // };
   return (
     <div>
       <h2 className={clsx(styles.title)}>Add Watch Product</h2>
-      <form onSubmit={handleSubmitForm} className={clsx(styles.form)}>
+      <form  className={clsx(styles.form)}>
         <div className={clsx(styles.formGroup)}>
           <label htmlFor="name" className={clsx(styles.label)}>
             Name:
@@ -139,7 +139,7 @@ const AddProduct = () => {
           />
         </div>
         <UploadImage />
-        {imageUrl && <img src={imageUrl} alt="" width={100} />}
+        {/* {imageUrl && <img src={imageUrl} alt="" width={100} />} */}
 
         <button type="submit" className={clsx(styles.submitButton)}>
           Add Product

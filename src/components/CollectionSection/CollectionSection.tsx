@@ -1,32 +1,44 @@
-import React from "react";
+import React, { ReactElement, useEffect } from "react";
 import clsx from "clsx";
 import styles from "./CollectionSection.module.scss";
 import TitleSection from "../TitleSection/TitleSection";
-import { Container, Row, Col } from "react-bootstrap";
-import { useSelector } from "react-redux";
-import { CollectionItem } from "../CollectionItem/CollectionItem";
-import { selectCollectionsList } from "../../selector.tsx";
+import axios from "axios";
+import { Banner } from "../Banner/Banner";
+import { Collection } from "../../dataType";
 
-const CollectionSection: React.FC = () => {
-  // Fetching the collections list from the Redux store
-  // Use the memoized selector
-  const collectionsList = useSelector(selectCollectionsList);
-  // console.log(collectionsList);
+const CollectionSection = (): ReactElement => {
+  const [collectionsList, setCollectionsList] = React.useState([]); // Initialize collectionsList state
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:3001/collections")
+      .then((response) => {
+        // console.log(response.data); // Log the fetched data for debugging purposes
+        setCollectionsList(response.data); // Set the collectionsList state with the fetched data
+      })
+      .catch((error) => {
+        console.error("Error fetching collections:", error); // Handle any errors that occur during the request
+      });
+  }, []); // Empty dependency array to run the effect only once on component mount
 
   return (
-    <Container className={clsx(styles.warrper)}>
+    <section className={clsx(styles.wrapper)}>
       <TitleSection
         title="Collections"
         desc="Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression."
       />
-      <Row>
-        {collectionsList.map((collectionItem) => (
-          <Col md={4} key={collectionItem.id}>
-            <CollectionItem data={collectionItem} />
-          </Col>
+      <div className={clsx(styles.collections)}>
+        {collectionsList.map((collection: Collection) => (
+          <Banner
+            key={collection.id}
+            title={collection.name}
+            desc={collection.description}
+            url={collection.image}
+            linkToCollection={`/watches?collectionId=${collection.id}`}
+          />
         ))}
-      </Row>
-    </Container>
+      </div>
+    </section>
   );
 };
 

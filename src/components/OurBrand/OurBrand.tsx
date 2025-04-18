@@ -9,14 +9,14 @@ export const OurBrand = () => {
   return (
     <Container fluid className={clsx(styles.wrapper)}>
       <Row>
-        <Col md={6}>
+        <Col md={6} className="px-0">
           <BrandItem
             src={images.ourStory}
             title="Our Story"
             link="/the-brand"
           />
         </Col>
-        <Col md={6}>
+        <Col md={6} className="px-0">
           <BrandItem
             src={images.ourValues}
             title="Our Values"

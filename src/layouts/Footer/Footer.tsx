@@ -10,7 +10,7 @@ const Footer = (): ReactElement => {
   return (
     <section className={clsx(styles.wrapper)}>
       <Container fluid>
-        <Row>
+        <Row className="py-5">
           <Col md={6}>
             <Link to="/" className={clsx(styles.brandName)}>
               zus

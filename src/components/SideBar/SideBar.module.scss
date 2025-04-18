@@ -1,0 +1,62 @@
+@use "../../assets/basecss/color"; 
+
+.wrapper {
+  color: color.$textBlack;
+  border: 1px solid color.$borderColor;
+  .title {
+    display: inline-flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background: #b3b4b1;
+    .nameTitle {
+      padding: 2rem 0;
+      font-family: "Playfair Display";
+      font-size: 2.5rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+  }
+  .listType {
+    .itemType {
+      margin: 1.5rem 0;
+      font-size: 1.8rem;
+      font-style: normal;
+      line-height: normal;
+      text-transform: capitalize;
+      .checkbox {
+        margin-right: 1rem;
+        margin-left: 1rem;
+        padding: 1rem;
+        &:hover {
+          cursor: pointer;
+        } 
+      }
+    }
+  }
+}
+
+.active {
+  color: color.$textBlue;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    border: none;
+    .title {
+      display: none;
+    }
+    .listType {
+      display: flex;
+      justify-content: space-around;
+      .itemType {
+        font-size: 1.6rem;
+        .checkbox {
+          margin-right: .5rem;
+          margin-left: .5rem;
+        }
+      }
+    }
+  }
+}
