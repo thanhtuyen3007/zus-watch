@@ -1,5 +1,5 @@
 @use "../../assets/basecss/color"; // Import color variables
-@use "../../assets/basecss/height";  // Import height variables
+@use "../../assets/basecss/height"; // Import height variables
 $navLink-width: clamp(
   8rem,
   4.4rem + 4.9vw,
@@ -13,6 +13,7 @@ $navLink-width: clamp(
   left: 0;
   z-index: 9; // Ensure the header is above other elements
   padding: 0;
+  width: 100%; // Set width to 100%
   height: height.$header-height; // Set height from imported variable
   max-height: height.$header-height; // Set maximum height from imported variable
   background-color: color.$primaryColor; // Set background color from imported variable
@@ -67,7 +68,7 @@ $navLink-width: clamp(
   }
 
   .navItem {
-    min-width: $navLink-width; // Set minimum width for navigation items
+    // min-width: $navLink-width; // Set minimum width for navigation items
     text-align: center;
     margin-left: 1rem;
     margin-right: 1rem;
@@ -113,7 +114,7 @@ $navLink-width: clamp(
     }
 
     .navItem {
-      width: 100%; // Set width to 100% for navigation items
+      width: 100%;
       margin: 0;
 
       .navItemLink {

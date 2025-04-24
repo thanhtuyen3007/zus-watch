@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 const Footer = (): ReactElement => {
   return (
-    <section className={clsx(styles.wrapper)}>
+    <footer className={clsx(styles.wrapper)}>
       <Container fluid>
         <Row className="py-5">
           <Col md={6}>
@@ -46,7 +46,7 @@ const Footer = (): ReactElement => {
           </Col>
         </Row>
       </Container>
-    </section>
+    </footer>
   );
 };
 

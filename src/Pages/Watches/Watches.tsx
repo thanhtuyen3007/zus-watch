@@ -49,7 +49,7 @@ const Watches = (): ReactElement => {
       });
   }, [collectionId]); // Re-run the effect whenever collectionId changes
 
-  console.log(dataProducts); // Log the current product list for debugging
+  console.log("data", dataProducts); // Log the current product list for debugging
 
   return (
     <Container fluid className={clsx(styles.wrapper)}>

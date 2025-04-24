@@ -34,8 +34,10 @@
   left: 50%;
   transform: translateX(-50%) translateY(-50%);
   color: color.$textWhite;
-  animation: backInDown .8s ease-out forwards;
+  animation:  backInDown .9s ease-out forwards;
+
 }
+
 .collection_title {
   font-size: 6.5rem;
   font-weight: 500;
@@ -54,11 +56,6 @@
     opacity: 0; // The element starts fully transparent.
     transform: translateX(-50%) translateY(-70%); // The element starts 150px below its original position.
   }
-  // 80% {
-  //   opacity: 1; // The element becomes fully visible.
-  //   transform: translateY(-10px); // The element overshoots slightly above its final position.
-  //   scale: (1.05); // The element slightly scales up for a subtle bounce effect.
-  // }
   100% {
     transform: translateX(-50%) translateY(-50%) scale(1); // The element settles into its final position with normal scale.
   }

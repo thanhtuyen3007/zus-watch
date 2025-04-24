@@ -36,9 +36,14 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translateX(-50%) translateY(-50%);
+  transform: translate(-50%, -50%);
   color: color.$textWhite;
-  animation: backInDown 0.8s ease-out forwards;
+  opacity: 0;
+
+  &.visible {
+    animation: backInUp 0.8s ease-out;
+    opacity: 1; // Animation for the content
+  }
 }
 .collection_title {
   font-size: 6.5rem;
@@ -46,23 +51,33 @@
   text-transform: capitalize;
 }
 .collection_desc {
-  margin-top: 2.5rem;
+  margin-top: 1.5rem;
   font-size: 1.8rem;
   line-height: 30px;
   font-style: normal;
-  white-space: nowrap;
 }
-@keyframes backInDown {
-  0% {
-    opacity: 0; // The element starts fully transparent.
-    transform: translateX(-50%) translateY(-70%); // The element starts 150px below its original position.
+
+@media (max-width: 767.98px) {
+  .collection_title {
+    font-size: 2.5rem;
+    font-weight: 500;
+    text-transform: capitalize;
   }
-  // 80% {
-  //   opacity: 1; // The element becomes fully visible.
-  //   transform: translateY(-10px); // The element overshoots slightly above its final position.
-  //   scale: (1.05); // The element slightly scales up for a subtle bounce effect.
-  // }
+  .collection_desc {
+    margin-top: 1rem;
+    font-size: 1.6rem;
+    line-height: 25px;
+    font-style: normal;
+  }
+}
+@keyframes backInUp {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) translateY(200px); // Combine centering and animation
+  }
+
   100% {
-    transform: translateX(-50%) translateY(-50%) scale(1); // The element settles into its final position with normal scale.
+    opacity: 1;
+    transform: translate(-50%, -50%) translateY(0); // Maintain centering
   }
 }

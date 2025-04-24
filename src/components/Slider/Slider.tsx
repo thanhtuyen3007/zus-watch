@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import React, { ReactElement } from "react";
+import { ReactElement } from "react";
 import styles from "./Slider.module.scss";
 
 export const Slider = ({ url }: { url: string }): ReactElement => {

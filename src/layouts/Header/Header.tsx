@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Import Font
 import { Link } from "react-router-dom"; // Import Link component from react-router-dom for navigation
 import styles from "./Header.module.scss"; // Import styles from the module stylesheet
 import { ReactElement, useState } from "react"; // Import React types and hooks
+import { Container } from "react-bootstrap";
 
 // Define the type for navigation links
 type NavLinkType = {
@@ -31,7 +32,7 @@ const Header = (): ReactElement => {
 
   return (
     <header className={clsx(styles.wrapper)}>
-      <div className={clsx(styles.container)}>
+      <Container  className={clsx(styles.container)}>
         {/* Brand logo */}
         <div className={clsx(styles.brand)}>
           <Link className={clsx(styles.logo)} to={"/"}>
@@ -60,7 +61,7 @@ const Header = (): ReactElement => {
             <FontAwesomeIcon className={clsx(styles.icon)} icon={faBagShopping} />
           </Link>
         </div>
-      </div>
+      </Container>
     </header>
   );
 };

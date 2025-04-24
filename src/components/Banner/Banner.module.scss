@@ -12,25 +12,37 @@
   max-height: 670px;
 }
 .content {
-  width: 100%;
+  text-wrap: wrap;
   position: absolute;
   left: 10%;
   bottom: 15%;
   color: #fff;
   text-align: start;
   z-index: 1;
-  animation: backInUp 1.2s ease-out forwards; // Animation for the content to slide in from below
+  opacity: 0; // Initially hidden
+  transform: translateY(50px); // Start slightly below the viewport
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out; // Smooth transition
+  &.visible {
+    opacity: 1; // Fully visible
+    transform: translateY(0); // Move to the original position
+  }
+ 
 
   h2 {
-    font-size: 5rem;
+    font-size: 4rem;
+
     line-height: normal;
     text-transform: capitalize;
+    box-sizing: border-box;
   }
   p {
-    width: 35%;
+    // width: 35%;
     font-size: 2.5rem;
     font-style: normal;
-    white-space: nowrap;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    white-space: wrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
@@ -44,7 +56,7 @@
     text-underline-offset: auto;
     text-underline-position: from-font;
     &:hover {
-      opacity: 0.8;
+      // opacity: 0.7;
       text-decoration-line: underline;
     }
   }
@@ -57,11 +69,7 @@
       200px
     ); // The element starts 150px below its original position.
   }
-  // 80% {
-  //   opacity: 1; // The element becomes fully visible.
-  //   transform: translateY(-10px); // The element overshoots slightly above its final position.
-  //   scale: (1.05); // The element slightly scales up for a subtle bounce effect.
-  // }
+ 
   100% {
     transform: translateY(0) scale(1); // The element settles into its final position with normal scale.
   }
