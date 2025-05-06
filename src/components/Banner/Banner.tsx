@@ -20,7 +20,7 @@ export const Banner = ({
   linkToCollection,
 }: Prop): ReactElement => {
   const bannerRef = React.useRef<HTMLDivElement>(null); // Create a ref for the banner element
-  const isVisible = useIntersectionObserver(bannerRef, { threshold: 0.5 }); //use custom hook to observe the banner element
+  const isVisible = useIntersectionObserver(bannerRef, { threshold: 0.7 }); //use custom hook to observe the banner element
   // Check if the banner is visible in the viewport
   return (
     <aside ref={bannerRef} className={clsx(styles.wrapper)}>

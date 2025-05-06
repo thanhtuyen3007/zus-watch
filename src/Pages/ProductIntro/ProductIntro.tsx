@@ -1,58 +1,63 @@
-import React, { ReactElement } from "react";
+import React, { ReactElement, useEffect, useState } from "react";
 import clsx from "clsx";
 import styles from "./ProductIntro.module.scss";
 import { Col, Container, Row } from "react-bootstrap";
 import { ImageProduct } from "../../components/ImageProduct/ImageProduct";
+import { useParams } from "react-router-dom";
+import { WatchType } from "../../types/types";
+import axios from "axios";
 
-interface ProductIntroProps {
-  id: number;
-  name: string;
-  description: string;
-  price: number;
-  image: string;
-  onAddToBag: (id: number) => void;
-}
+const ProductIntro = (): ReactElement => {
+  const { id } = useParams<{ id: string }>();
+  const [product, setProduct] = useState<WatchType | null>(null);
 
-const ProductIntro: React.FC<ProductIntroProps> = ({
-  id,
-  name,
-  description,
-  price,
-  image,
-  onAddToBag,
-}): ReactElement => {
+  useEffect(() => {
+    if (!id) return;
+
+    axios
+      .get(`http://localhost:3001/products?id=${id}`)
+      .then((res) => {
+        const productItem = res.data.find((item: WatchType) => item.id === id);
+        setProduct(productItem || null);
+        console.log("Product data:", productItem);
+        
+      })
+      .catch((error) => {
+        console.error("Error fetching product:", error);
+      });
+  }, [id]);
+
+  if (!product) {
+    return <p>Loading product details...</p>;
+  }
+
   return (
     <Container className={clsx(styles.productIntro)}>
       <Row>
         <Col md={6}>
           <ImageProduct
-            src={image}
-            alt={name}
+            src={product.imageUrl}
+            alt={product.name}
             classname={clsx(styles.productImage)}
           />
         </Col>
         <Col md={6} className={clsx(styles.productInfo)}>
-          <h1 className={clsx(styles.productName)}>{name}</h1>
-          <p className={clsx(styles.productDescription)}>{description}</p>
-          <p className={clsx(styles.productPrice)}>${price.toFixed(2)}</p>
+          <h1 className={clsx(styles.productName)}>{product.name}</h1>
+          <p className={clsx(styles.productDescription)}>{product.description}</p>
+          <p className={clsx(styles.productPrice)}>${product.price.toFixed(2)}</p>
           <p className={clsx(styles.productDiscount)}>
             Discount: 10% off for a limited time!
           </p>
-          <button
-            className={clsx(styles.addToBagButton)}
-            onClick={() => onAddToBag(id)}
-          >
-            Add to Bag
-          </button>
+          <button className={clsx(styles.addToBagButton)}>Add to Bag</button>
         </Col>
       </Row>
       <div className={clsx(styles.productDetails)}>
         <h2 className={clsx(styles.detailsTitle)}>Product Details:</h2>
         <p className={clsx(styles.detailsText)}>
-          This watch features a high-quality stainless steel case, a
-          scratch-resistant sapphire crystal, and a water resistance of up to 50
-          meters. The elegant design is complemented by a comfortable leather
-          strap, making it perfect for both casual and formal occasions.
+          This watch features a high-quality stainless steel case, a scratch-resistant
+          sapphire crystal, and a water resistance of up to 50 meters. The elegant design
+          is complemented by a comfortable leather strap, making it perfect for both
+          casual and formal occasions.
         </p>
       </div>
       <div className={clsx(styles.productSpecifications)}>

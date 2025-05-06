@@ -4,99 +4,99 @@
       "id": "c1",
       "name": "classics",
       "description": "A collection of classic watches",
-      "image": "https://res.cloudinary.com/djka3a0ah/image/upload/v1744973142/zpje45an3rlcjmevsn8u.jpg",
-      "watches": [
-        {
-          "id": "uuid()",
-          "name": "Classic Watch",
-          "price": 199.99,
-          "description": "A classic watch with a timeless design.",
-          "productDetails": " Stainless steel case, leather strap, water-resistant.",
-          "warranty": "2",
-          "stock": 50,
-          "category": "classics",
-          "imageUrl": "https://res.cloudinary.com/djka3a0ah/image/upload/v1743328206/pvhmedgxj9syqo0upt9f.jpg"
-        },
-        {
-          "id": "uuid()",
-          "name": "Vintage Watch",
-          "price": 249.99,
-          "description": "A vintage watch with a classic design.",
-          "productDetails": " Stainless steel case, leather strap, water-resistant.",
-          "warranty": "2",
-          "stock": 50,
-          "category": "classics",
-          "imageUrl": "https://res.cloudinary.com/djka3a0ah/image/upload/v1743328206/pvhmedgxj9syqo0upt9f.jpg"
-        },
-        {
-          "id": "uuid()",
-          "name": "Retro Watch",
-          "price": 299.99,
-          "description": "A retro watch with a classic design.",
-          "productDetails": " Stainless steel case, leather strap, water-resistant.",
-          "warranty": "2",
-          "stock": 50,
-          "category": "classics",
-          "imageUrl": "https://res.cloudinary.com/djka3a0ah/image/upload/v1743328206/pvhmedgxj9syqo0upt9f.jpg"
-        }
-      ]
+      "image": "https://res.cloudinary.com/djka3a0ah/image/upload/v1744973142/zpje45an3rlcjmevsn8u.jpg"
     },
     {
       "id": "c2",
       "name": "Contemporary",
       "description": "Delivering elegance and sophistication.",
-      "image": "https://res.cloudinary.com/djka3a0ah/image/upload/v1744973368/uvdebzced4lfi7xpllu3.jpg",
-      "watches": [
-        {
-          "id": "uuid()",
-          "name": "Contemporary Watch",
-          "price": 299.99,
-          "description": "A Contemporary watch with advanced features.",
-          "productDetails": " Stainless steel case, leather strap, water-resistant.",
-          "warranty": "2",
-          "stock": 50,
-          "category": "Contemporary",
-          "imageUrl": "https://res.cloudinary.com/djka3a0ah/image/upload/v1743328206/pvhmedgxj9syqo0upt9f.jpg"
-        }
-      ]
+      "image": "https://res.cloudinary.com/djka3a0ah/image/upload/v1744973368/uvdebzced4lfi7xpllu3.jpg"
+    },
+    {
+      "id": "c3",
+      "name": "theme",
+      "description": "A collection of themed watches",
+      "image": "https://res.cloudinary.com/djka3a0ah/image/upload/v1744973483/xci4c62gh2c8apsrgyd8.jpg"
     },
     {
       "id": "c4",
-      "name": "theme",
-      "description": "A collection of themed watches",
-      "image": "https://res.cloudinary.com/djka3a0ah/image/upload/v1744973483/xci4c62gh2c8apsrgyd8.jpg",
-      "watches": [
-        {
-          "id": "uuid()",
-          "name": "Themed Watch",
-          "price": 249.99,
-          "description": "A themed watch with a unique design.",
-          "productDetails": " Stainless steel case, leather strap, water-resistant.",
-          "warranty": "2",
-          "stock": 50,
-          "category": "theme",
-          "imageUrl": "https://res.cloudinary.com/djka3a0ah/image/upload/v1743328206/pvhmedgxj9syqo0upt9f.jpg"
-        }
-      ]
-    },
-    {
-      "id": "c5",
       "name": "1980s",
       "description": "A collection of sports watches",
-      "image": "https://res.cloudinary.com/djka3a0ah/image/upload/v1744973610/rh9e4fl9fet1zmhcobdd.jpg",
-      "watches": [
-        {
-          "id": "uuid()",
-          "name": "1980s Watch",
-          "price": 349.99,
-          "description": "A sports watch with advanced features.",
-          "productDetails": " Stainless steel case, leather strap, water-resistant.",
-          "warranty": "2",
-          "stock": 50,
-          "category": "1980s",
-          "imageUrl": "https://res.cloudinary.com/djka3a0ah/image/upload/v1743328206/pvhmedgxj9syqo0upt9f.jpg"
-        }
-      ]
+      "image": "https://res.cloudinary.com/djka3a0ah/image/upload/v1744973610/rh9e4fl9fet1zmhcobdd.jpg"
+    }
+  ],
+  "products": [
+    {
+      "id": "w1",
+      "name": "Classic Watch",
+      "price": 199.99,
+      "description": "A classic watch with a timeless design.",
+      "productDetails": "Stainless steel case, leather strap, water-resistant.",
+      "warranty": "2",
+      "stock": 50,
+      "category": "classics",
+      "imageUrl": "https://res.cloudinary.com/djka3a0ah/image/upload/v1743328206/pvhmedgxj9syqo0upt9f.jpg",
+      "collectionId": "c1"
+    },
+    {
+      "id": "w2",
+      "name": "Vintage Watch",
+      "price": 249.99,
+      "description": "A vintage watch with a classic design.",
+      "productDetails": "Stainless steel case, leather strap, water-resistant.",
+      "warranty": "2",
+      "stock": 50,
+      "category": "classics",
+      "imageUrl": "https://res.cloudinary.com/djka3a0ah/image/upload/v1743328206/pvhmedgxj9syqo0upt9f.jpg",
+      "collectionId": "c1"
+    },
+    {
+      "id": "w3",
+      "name": "Retro Watch",
+      "price": 299.99,
+      "description": "A retro watch with a classic design.",
+      "productDetails": "Stainless steel case, leather strap, water-resistant.",
+      "warranty": "2",
+      "stock": 50,
+      "category": "classics",
+      "imageUrl": "https://res.cloudinary.com/djka3a0ah/image/upload/v1743328206/pvhmedgxj9syqo0upt9f.jpg",
+      "collectionId": "c1"
+    },
+    {
+      "id": "w4",
+      "name": "Contemporary Watch",
+      "price": 299.99,
+      "description": "A contemporary watch with advanced features.",
+      "productDetails": "Stainless steel case, leather strap, water-resistant.",
+      "warranty": "2",
+      "stock": 50,
+      "category": "Contemporary",
+      "imageUrl": "https://res.cloudinary.com/djka3a0ah/image/upload/v1743328206/pvhmedgxj9syqo0upt9f.jpg",
+      "collectionId": "c2"
+    },
+    {
+      "id": "w5",
+      "name": "Themed Watch",
+      "price": 249.99,
+      "description": "A themed watch with a unique design.",
+      "productDetails": "Stainless steel case, leather strap, water-resistant.",
+      "warranty": "2",
+      "stock": 50,
+      "category": "theme",
+      "imageUrl": "https://res.cloudinary.com/djka3a0ah/image/upload/v1743328206/pvhmedgxj9syqo0upt9f.jpg",
+      "collectionId": "c3"
+    },
+    {
+      "id": "w6",
+      "name": "1980s Watch",
+      "price": 349.99,
+      "description": "A sports watch with advanced features.",
+      "productDetails": "Stainless steel case, leather strap, water-resistant.",
+      "warranty": "2",
+      "stock": 50,
+      "category": "1980s",
+      "imageUrl": "https://res.cloudinary.com/djka3a0ah/image/upload/v1743328206/pvhmedgxj9syqo0upt9f.jpg",
+      "collectionId": "c4"
     }
   ]
 }

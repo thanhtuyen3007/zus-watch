@@ -10,46 +10,39 @@ const Watches = (): ReactElement => {
   const location = useLocation(); // Get the current URL information
   const queryParams = new URLSearchParams(location.search); // Convert the query string into an object for easier reading
   const collectionId = queryParams.get("collectionId"); // Get the value of "collectionId"
+
   const [dataProducts, setDataProducts] = useState([]); // State to store the list of products
   const [titleCollection, setTitleCollection] = useState(""); // State to store the title of the collection
   const [descriptionCollection, setDescriptionCollection] = useState(""); // State to store the description of the collection
   const [imageCollection, setImageCollection] = useState(""); // State to store the image of the collection
 
   useEffect(() => {
-    // Fetch collections data from the API
+    if (!collectionId) return;
+
+    // Fetch collection info
     axios
-      .get("http://localhost:3001/collections")
-      .then((response) => {
-        const collections = response.data;
-        console.log("Fetched collections:", collections); // Log the fetched collections for debugging
-
-        if (collectionId) {
-          // If collectionId exists in query parameters
-          const selectedCollection = collections.find(
-            (collection: { id: string }) => collection.id === collectionId
-          ); // Find the collection matching the collectionId
-
-          if (selectedCollection) {
-            // If a matching collection is found, update the product list
-            setTitleCollection(selectedCollection.name); // Set the title of the collection
-            setDescriptionCollection(selectedCollection.description);
-            setImageCollection(selectedCollection.image); // Set the description of the collection
-            setDataProducts(selectedCollection.watches);
-            console.log("Selected watches:", selectedCollection.watches);
-          } else {
-            // If no matching collection is found, set an empty product list
-            setDataProducts([]);
-            console.log("No collection found with id:", collectionId);
-          }
-        }
+      .get(`http://localhost:3001/collections/${collectionId}`)
+      .then((res) => {
+        const collection = res.data;
+        setTitleCollection(collection.name);
+        setDescriptionCollection(collection.description);
+        setImageCollection(collection.image);
       })
-      .catch((error) => {
-        // Handle errors during the API call
-        console.error("Error fetching collections:", error);
+      .catch((err) => {
+        console.error("Error fetching collection:", err);
       });
-  }, [collectionId]); // Re-run the effect whenever collectionId changes
 
-  console.log("data", dataProducts); // Log the current product list for debugging
+    // Fetch products in the collection
+    axios
+      .get(`http://localhost:3001/products?collectionId=${collectionId}`)
+      .then((res) => {
+        console.log(res.data); // Log the fetched data for debugging
+        setDataProducts(res.data);
+      })
+      .catch((err) => {
+        console.error("Error fetching watches:", err);
+      });
+  }, [collectionId]);
 
   return (
     <Container fluid className={clsx(styles.wrapper)}>
@@ -61,25 +54,12 @@ const Watches = (): ReactElement => {
         />
         <div className={clsx(styles.collection_content)}>
           <h1 className={clsx(styles.collection_title)}>{titleCollection}</h1>
-
           <p className={clsx(styles.collection_desc)}>
             {descriptionCollection}
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-            hendrerit, nisi in fringilla blandit, sem tellus ultricies nibh,
-            bibendum dictum libero magna ac est. Proin tristique varius metus,
-            ut dictum velit efficitur et. Sed vel augue sit amet velit dictum
-            porttitor eu sit amet enim. Interdum et malesuada fames ac ante
-            ipsum primis in faucibus. Nulla vulputate mi tortor, at suscipit
-            libero consequat ac. Nam facilisis, nunc a imperdiet consectetur,
-            nunc libero cursus augue, vel iaculis nisi metus sit amet massa.
-            Cras eget tortor consequat tellus pharetra tincidunt ac id mi.
           </p>
         </div>
-
-        {/* Display the title, image, and description of the collection */}
       </aside>
-      <ListProducts data={dataProducts} />{" "}
-      {/* Pass the product list to ListProducts */}
+      <ListProducts data={dataProducts} />
     </Container>
   );
 };

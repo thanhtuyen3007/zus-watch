@@ -8,6 +8,7 @@ import Cart from "./Pages/Cart/Cart";
 import Admin from "./Pages/Admin/Admin";
 import Collections from "./Pages/Collections/Collections";
 import Watches from "./Pages/Watches/Watches";
+import ProductIntro from "./Pages/ProductIntro/ProductIntro";
 // import ProductIntro from "./components/ProductIntro/ProductIntro";
 
 interface publicRouteType {
@@ -22,6 +23,7 @@ const publicRoute: publicRouteType[] = [
   { path: "/contact", component: Contact },
   { path: "/cart", component: Cart },
   { path: "/watches", component: Watches },
+  { path: "products/:id", component: ProductIntro },
 ];
 function App() {
   return (
@@ -42,8 +44,8 @@ function App() {
               />
             );
           })}
+
           <Route path="/admin" element={<Admin />} />
-          {/* <Route path="/product/:id" element={<ProductIntro />} /> */}
         </Routes>
       </div>
     </Router>

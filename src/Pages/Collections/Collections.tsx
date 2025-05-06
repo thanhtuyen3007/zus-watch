@@ -4,7 +4,7 @@ import styles from "./Collections.module.scss";
 import TitleSection from "../../components/TitleSection/TitleSection";
 import axios from "axios";
 import { Banner } from "../../components/Banner/Banner";
-import { Collection } from "../../dataType";
+import { CollectionType } from "../../types/types";
 const Collections = (): ReactElement => {
   const [collectionsList, setCollectionsList] = React.useState([]); // Initialize collectionsList state
 
@@ -26,7 +26,7 @@ const Collections = (): ReactElement => {
         desc="Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression."
       />
       <div className={clsx(styles.collections)}>
-        {collectionsList.map((collection: Collection) => (
+        {collectionsList.map((collection: CollectionType) => (
           <Banner
             key={collection.id}
             title={collection.name}
