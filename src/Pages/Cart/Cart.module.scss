@@ -16,6 +16,15 @@
   text-align: center;
   text-transform: uppercase;
 }
+.cartEmpty{
+  margin: 0 auto;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #8f8e8e;
+  font-style: normal;
+  line-height: normal;
+  text-align: center;
+}
 @media (max-width: 767.98px) {
   .cartTitle {
     font-size: 2rem;

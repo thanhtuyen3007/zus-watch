@@ -4,7 +4,12 @@ import styles from "./Cart.module.scss";
 import ItemCart from "../../components/ItemCart/ItemCart";
 import { Col, Container, Row } from "react-bootstrap";
 import { FormOder } from "../../components/FormOder/FormOder";
+import { useSelector } from "react-redux";
+import { RootState } from "../../redux/store";
 const Cart = (): ReactElement => {
+  const cartItems = useSelector((state: RootState) => state.cart.cartItems);
+
+  // const totalPrice = useSelector((state: any) => state.cart.totalPrice);
   return (
     <Container className={clsx(styles.cartSection)}>
       <h1 className={clsx(styles.cartTitle)}>shopping bag</h1>
@@ -14,21 +19,13 @@ const Cart = (): ReactElement => {
             <FormOder />
           </Col>
           <Col md={6}>
-            <ItemCart
-              id={1}
-              name=" Le Lorem Ipsum est simplement du faux texte employé dans la
-              composition et la mise en page avant impression.1"
-              price={400}
-              quantity={1}
-              onRemove={(id) => console.log(`Remove item with id: ${id}`)}
-              srcImg={""}
-              onIncrease={function (id: number): void {
-                throw new Error("Function not implemented.");
-              }}
-              onDecrease={function (id: number): void {
-                throw new Error("Function not implemented.");
-              }}
-            />
+            {cartItems.length > 0 ? (
+              cartItems.map((cartItem) => (
+                <ItemCart key={cartItem.id} productItem={cartItem} />
+              ))
+            ) : (
+              <h2 className={clsx(styles.cartEmpty)}>Your cart is empty!</h2>
+            )}
           </Col>
         </Row>
       </div>

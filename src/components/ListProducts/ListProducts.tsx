@@ -2,7 +2,13 @@ import { Row, Col, Container } from "react-bootstrap"; // Bootstrap components f
 import { ReactElement } from "react";
 import { ProductItem } from "../ProductItem/ProductItem"; // Component for rendering individual product items
 
-const ListProducts = ({ data }): ReactElement => {
+import { WatchType } from "../../types/types"; // Import WatchType for proper typing
+
+interface ListProductsProps {
+  data: Array<WatchType>; // Use WatchType for the data array
+}
+
+const ListProducts = ({ data }: ListProductsProps): ReactElement => {
   return (
     <Container>
       <Row>

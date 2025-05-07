@@ -1,65 +1,71 @@
 import React from "react";
-import clsx from "clsx";
-import styles from "./ItemCart.module.scss";
-import { Col, Container, Row } from "react-bootstrap";
-import { ImageProduct } from "../ImageProduct/ImageProduct";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faX, faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
+import clsx from "clsx"; // Utility for conditional class names
+import styles from "./ItemCart.module.scss"; // Module-specific styles
+import { Col, Container, Row } from "react-bootstrap"; // Bootstrap components for layout
+import { ImageProduct } from "../ImageProduct/ImageProduct"; // Component for rendering product images
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // FontAwesome icons
+import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons"; // Icons for quantity adjustment
+import { WatchType } from "../../types/types"; // Type definition for a watch product
+import { useDispatch } from "react-redux"; // Redux hook for dispatching actions
+import { removeFromCart } from "../../Pages/Cart/cartSlice"; // Action to remove an item from the cart
 
+// Props interface for the ItemCart component
 interface ItemCartProps {
-  id: number;
-  name: string;
-  srcImg: string;
-  price: number;
-  quantity: number;
-  onRemove: (id: number) => void;
-  onIncrease: (id: number) => void;
-  onDecrease: (id: number) => void;
+  productItem: WatchType; // The product item to display in the cart
 }
 
-const ItemCart: React.FC<ItemCartProps> = ({
-  id,
-  name,
-  srcImg,
-  price,
-  quantity,
-  onRemove,
-  onIncrease,
-  onDecrease,
-}) => {
+// Functional component for rendering a cart item
+const ItemCart: React.FC<ItemCartProps> = ({ productItem }: ItemCartProps) => {
+  const dispatch = useDispatch(); // Initialize the Redux dispatch function
+
+  // Function to handle removing a product from the cart
+  const handleRemoveProduct = () => {
+    dispatch(removeFromCart(productItem.id)); // Dispatch the action to remove the product by its ID
+  };
+
   return (
     <Container className={clsx(styles.itemCart)}>
       <Row className={clsx(styles.itemRow)}>
-        <Col  xs={4} className={clsx(styles.itemImg)}>
-          <ImageProduct src={srcImg} alt={name} />
+        {/* Product Image */}
+        <Col xs={4} className={clsx(styles.itemImg)}>
+          <ImageProduct
+            src={productItem.imageUrl} // Product image URL
+            alt={productItem.description} // Product description for accessibility
+          />
         </Col>
-        <Col  xs={8} className={clsx(styles.itemInfo)}>
-          <span className={clsx(styles.itemName)}>{name}</span>
+
+        {/* Product Information */}
+        <Col xs={8} className={clsx(styles.itemInfo)}>
+          <span className={clsx(styles.itemName)}>{productItem.name}</span>
           <div className={clsx(styles.priceQuantity)}>
-            <p className={clsx(styles.itemPrice)}>{price.toFixed(1)}$</p>
+            {/* Product Price */}
+            <p className={clsx(styles.itemPrice)}>
+              {productItem.price.toLocaleString()}{" "}
+              {/* Format price with commas */}
+            </p>
+
+            {/* Quantity Adjustment */}
             <div className={clsx(styles.quantityBox)}>
-              <button
-                className={clsx(styles.quantityButton)}
-                onClick={() => onDecrease(id)}
-              >
-                <FontAwesomeIcon icon={faMinus} />
+              <button className={clsx(styles.quantityButton)}>
+                <FontAwesomeIcon icon={faMinus} /> {/* Decrease quantity */}
               </button>
-              <span className={clsx(styles.quantity)}>{quantity}</span>
-              <button
-                className={clsx(styles.quantityButton)}
-                onClick={() => onIncrease(id)}
-              >
-                <FontAwesomeIcon icon={faPlus} />
+              <span className={clsx(styles.quantity)}>
+                {productItem.warranty}{" "}
+                {/* Display product warranty as quantity */}
+              </span>
+              <button className={clsx(styles.quantityButton)}>
+                <FontAwesomeIcon icon={faPlus} /> {/* Increase quantity */}
               </button>
             </div>
           </div>
         </Col>
       </Row>
+
+      {/* Remove Button */}
       <button
+        onClick={handleRemoveProduct} // Remove product from cart on click
         className={clsx(styles.removeButton)}
-        onClick={() => onRemove(id)}
       >
-        {/* <FontAwesomeIcon icon={faX} /> */}
         Remove
       </button>
     </Container>
