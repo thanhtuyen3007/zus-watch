@@ -1,37 +1,43 @@
-import clsx from "clsx";
 import axios from "axios";
+import clsx from "clsx"; 
 import { useState } from "react";
-import styles from "./UploadImage.module.scss";
-import { useDispatch } from "react-redux";
-import { addImageUrl } from "./UploadImageSlice";
+import styles from "./UploadImage.module.scss"; 
 
-const UploadImage: React.FC = () => {
+// Props interface for the UploadImage component
+interface UploadImageProps {
+  label: string; // Label for the input field
+  onUploadSuccess: (url: string) => void; // Callback function triggered after a successful upload
+}
+
+// Functional component for uploading an image
+const UploadImage: React.FC<UploadImageProps> = ({
+  label,
+  onUploadSuccess,
+}) => {
   const [imageUrl, setImageUrl] = useState(""); // State to store the uploaded image URL
-  const dispatch = useDispatch(); // Redux dispatch function to send actions to the store
 
+  // Function to handle image upload
   const handleUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0]; // Get the first selected file
+    const file = e.target.files?.[0]; // Get the selected file
     if (!file) return; // Exit if no file is selected
 
-    const formData = new FormData(); // Create a FormData object to hold the file data
+    const formData = new FormData(); // Create a FormData object to send the file
     formData.append("file", file); // Append the file to the FormData object
-    formData.append("upload_preset", "product_image"); // Cloudinary preset for image upload
+    formData.append("upload_preset", "product_image"); // Append the upload preset (specific to Cloudinary)
 
     try {
+      // Send a POST request to the Cloudinary API
       const response = await axios.post(
-        "https://api.cloudinary.com/v1_1/djka3a0ah/image/upload", // Cloudinary upload URL
+        "https://api.cloudinary.com/v1_1/djka3a0ah/image/upload",
         formData
       );
-      const imageUrl = response.data.secure_url; // Extract the secure URL from the response
-      setImageUrl(imageUrl); // Update the state with the uploaded image URL
-      dispatch(addImageUrl(imageUrl)); // Dispatch the image URL to the Redux store
-      console.log("Image uploaded successfully:", response.data); // Log the successful upload
-      console.log("Image URL:", response.data.secure_url); // Log the image URL
+
+      const url = response.data.secure_url; // Extract the secure URL of the uploaded image
+      setImageUrl(url); // Update the state with the uploaded image URL
+      onUploadSuccess(url); // Trigger the callback function with the uploaded image URL
+      console.log("Image uploaded successfully:", url); // Log the success message
     } catch (error) {
-      console.error("Error uploading image:", error); // Log any errors during the upload
-      if (axios.isAxiosError(error) && error.response) {
-        console.error("Response data:", error.response.data); // Log detailed error response
-      }
+      console.error("Error uploading image:", error); // Log any errors
     }
   };
 
@@ -39,22 +45,24 @@ const UploadImage: React.FC = () => {
     <div className={clsx(styles.formGroup)}>
       {/* Label for the file input */}
       <label htmlFor="imageUrl" className={clsx(styles.label)}>
-        Image URL:
+        {label}:
       </label>
+
       {/* File input for selecting an image */}
       <input
         type="file"
         id="imageUrl"
         name="imageUrl"
-        multiple
         className={clsx(styles.fileInput)}
-        accept="image/*" // Restrict file types to images
-        required
-        onChange={handleUpload} // Trigger the upload handler on file selection
+        accept="image/*" // Restrict file types to images only
+        required // Make the input field required
+        onChange={handleUpload} // Handle file selection
       />
-      {/* Display the uploaded image if available */}
-      {imageUrl && <img src={imageUrl} alt="" width="200px" />}
+
+      {/* Display a preview of the uploaded image */}
+      {imageUrl && <img src={imageUrl} alt="Preview" width="200px" />}
     </div>
   );
 };
+
 export default UploadImage;

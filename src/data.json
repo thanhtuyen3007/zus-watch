@@ -295,6 +295,17 @@
       "category": "nature",
       "imageUrl": "https://res.cloudinary.com/djka3a0ah/image/upload/v1744973483/xci4c62gh2c8apsrgyd8.jpg",
       "collectionId": "c7"
+    },
+    {
+      "id": "w22",
+      "name": "ocean explorer",
+      "price": 2999.9,
+      "description": "A rugged diver’s watch designed to withstand the depths",
+      "collectionId": "c2",
+      "productDetails": "Automatic movement, 200m water resistance, stainless steel case.",
+      "warranty": 2,
+      "stock": 14,
+      "imageUrl": "https://res.cloudinary.com/djka3a0ah/image/upload/v1746808858/daubef8f3d9zdw7bod6o.jpg"
     }
   ]
 }

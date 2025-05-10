@@ -1,7 +1,7 @@
 import { ReactElement } from "react";
 import clsx from "clsx";
 import styles from "./Admin.module.scss";
-import AddProduct from "../../components/AddProduct/AddProduct";
+import { Link, Outlet } from "react-router-dom";
 
 const Admin = (): ReactElement => {
   return (
@@ -9,15 +9,25 @@ const Admin = (): ReactElement => {
       <nav className={clsx(styles.sidebar)}>
         <h3 className={clsx(styles.sidebarTitle)}>Admin Dashboard</h3>
         <ul className={clsx(styles.navList)}>
-          <li className={clsx(styles.navItem)}>Add Product</li>
-          <li className={clsx(styles.navItem)}>product list</li>
-          <li className={clsx(styles.navItem)}>Orders</li>
-          <li className={clsx(styles.navItem)}>Users</li>
-          <li className={clsx(styles.navItem)}>Chat</li>
+          <Link to={"/admin/add-product"} className={clsx(styles.navItem)}>
+            Add Product
+          </Link>
+          <Link to={"/admin/products"} className={clsx(styles.navItem)}>
+            product list
+          </Link>
+          <Link to={"/"} className={clsx(styles.navItem)}>
+            Orders
+          </Link>
+          <Link to={"/"} className={clsx(styles.navItem)}>
+            Users
+          </Link>
+          <Link to={"/"} className={clsx(styles.navItem)}>
+            Chat
+          </Link>
         </ul>
       </nav>
       <main className={clsx(styles.mainContent)}>
-        <AddProduct />
+        <Outlet />
       </main>
     </div>
   );

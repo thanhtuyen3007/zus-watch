@@ -9,7 +9,8 @@ import Admin from "./Pages/Admin/Admin";
 import Collections from "./Pages/Collections/Collections";
 import Watches from "./Pages/Watches/Watches";
 import ProductIntro from "./Pages/ProductIntro/ProductIntro";
-// import ProductIntro from "./components/ProductIntro/ProductIntro";
+import AddProduct from "./components/AddProduct/AddProduct";
+import AdminProduct from "./components/AdminProduct/AdminProduct";
 
 interface publicRouteType {
   path: string;
@@ -44,8 +45,14 @@ function App() {
               />
             );
           })}
-
-          <Route path="/admin" element={<Admin />} />
+          {/* Admin Routes */}
+          <Route path="/admin" element={<Admin />}>
+            {/* Nested Routes */}
+            <Route index element={<AdminProduct />} />
+            {/* Default child route */}
+            <Route path="add-product" element={<AddProduct />} />
+            <Route path="products" element={<AdminProduct />} />
+          </Route>
         </Routes>
       </div>
     </Router>

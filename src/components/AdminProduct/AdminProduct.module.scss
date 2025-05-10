@@ -1,0 +1,43 @@
+@use "../../assets/basecss/color"; // Import color variables
+.title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+
+.container {
+  width: 100%;
+  padding-top: 1.5rem;
+  padding-bottom: 3rem;
+  color: color.$textBlack;
+  .img {
+    width: 100%;
+    height: 100%;
+  }
+  .name {
+    margin-top: 2rem;
+    font-size: 2.3rem;
+    font-style: normal;
+    line-height: normal;
+    text-transform: capitalize;
+  }
+  .desc {
+    margin-top: 1rem;
+    font-size: 1.6rem;
+    font-style: normal;
+    line-height: normal;
+    text-transform: capitalize;
+  }
+  .price {
+    margin-top: 1rem;
+    font-family: "Alike";
+    font-size: 2rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-transform: lowercase;
+  }
+}
