@@ -1,14 +1,10 @@
-import React, from "react";
+import React from "react";
 import clsx from "clsx";
 import styles from "./SideBar.module.scss";
-
 
 // Collection options
 
 const SideBar: React.FC = () => {
- 
- 
-
   return (
     <div className={clsx(styles.wrapper)}>
       <div className={clsx(styles.title)}>
