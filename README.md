@@ -1,50 +1,63 @@
-# React + TypeScript + Vite
+zusWatch
+A modern e-commerce web application for watch collections, built with React, Redux Toolkit, React Router, and Bootstrap.
+This project demonstrates a full-featured product catalog, shopping cart, admin management, and image upload functionality.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Features:
+Product Catalog: Browse collections and detailed product pages.
+Shopping Cart: Add, remove, and manage products in your cart (with localStorage persistence).
+Admin Panel: Add new products, manage existing products, and upload images.
+Image Upload: Upload product images directly to Cloudinary.
+Responsive Design: Built with Bootstrap for mobile and desktop.
+Routing: Uses React Router v6 for nested and dynamic routes.
+State Management: Uses Redux Toolkit for global state (cart, products, images).
+Getting Started:
+Prerequisites
+Node.js (v16 or newer recommended)
+npm or yarn
+Installation:
+1.Clone the repository:
+git clone https://github.com/your-username/zusWatch.git
+cd zusWatch
+2.Install dependencies:
+npm install
+# or
+yarn install
+3.Start the mock API server (using json-server):
+npx json-server --watch src/data.json --port 3001
+4.Start the development server:
+npm start
+# or
+yarn start
+5.Open your browser:
+Visit http://localhost:3000
 
-Currently, two official plugins are available:
+Project Structure:
+src/
+  components/         # Reusable UI components (Product List, Cart Item, Upload Image, etc.)
+  layouts/            # Layout components (Header, Footer, DefaultLayout)
+  Pages/              # Page components (Home, Cart, Admin, ProductIntro, etc.)
+  redux/              # Redux store and slices
+  types/              # TypeScript type definitions
+  data.json           # Mock data for collections and products
+  App.tsx             # Main app and route definitions
+Key Technologies:
+React (with Hooks)
+Redux Toolkit
+React Router v6
+Bootstrap & React-Bootstrap
+Cloudinary (for image uploads)
+json-server (for mock API)
+Customization:
+Cloudinary:
+Update your Cloudinary cloud name and upload preset in UploadImage.tsx if you use your own account.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+API Endpoints:
+Adjust API URLs in components if your backend runs on a different port or path.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+Scripts:
+npm start — Start the React development server
+npm run build — Build for production
+npx json-server --watch [data.json](http://_vscodecontentref_/1) --port 3001 — Start mock API server
+License:
+This project is for educational/demo purposes.
+Feel free to fork and adapt for your own use!
