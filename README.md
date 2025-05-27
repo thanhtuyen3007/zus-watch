@@ -21,7 +21,8 @@ git clone https://github.com/your-username/zusWatch.git
 cd zusWatch
 ```
 2.Install dependencies:
-```bash npm install
+```bash
+npm install
 #or
 yarn install
 ```
@@ -39,7 +40,16 @@ yarn start
 Visit http://localhost:3000
 
 ## Project Structure:
-``` src/ ├── components/ # Reusable UI components (Product List, Cart Item, Upload Image, etc.) ├── layouts/ # Layout components (Header, Footer, DefaultLayout) ├── Pages/ # Page components (Home, Cart, Admin, ProductIntro, etc.) ├── redux/ # Redux store and slices ├── types/ # TypeScript type definitions ├── data.json # Mock data for collections and products └── App.tsx # Main app and route definitions ``` 
+```bash
+src/
+├── components/       # Reusable UI components (Product List, Cart Item, Upload Image, etc.)
+├── layouts/          # Layout components (Header, Footer, DefaultLayout)
+├── Pages/            # Page components (Home, Cart, Admin, ProductIntro, etc.)
+├── redux/            # Redux store and slices
+├── types/            # TypeScript type definitions
+├── data.json         # Mock data for collections and products
+└── App.tsx           # Main app and route definitions
+```
 ## Key Technologies:
 React (with Hooks)
 Redux Toolkit
@@ -55,9 +65,15 @@ API Endpoints:
 Adjust API URLs in components if your backend runs on a different port or path.
 
 ## Scripts:
-```bash npm start#Start the React development server ```
-```bash npm run build#Build for production ```
-```bash npx json-server --watch [data.json](http://_vscodecontentref_/1) --port 3001#Start mock API server ```
+```bash
+npm start#Start the React development server
+```
+```bash
+npm run build#Build for production
+```
+```bash
+ npx json-server --watch [data.json](http://_vscodecontentref_/1) --port 3001#Start mock API server
+```
 
 
 
