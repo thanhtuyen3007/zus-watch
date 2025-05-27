@@ -1,4 +1,4 @@
-# ZUS Watch - Website Bán Đồng Hồ
+#  ZUS Watch - Online Watch Store
 A modern e-commerce web application for watch collections, built with React, Redux Toolkit, React Router, and Bootstrap.
 This project demonstrates a full-featured product catalog, shopping cart, admin management, and image upload functionality.
 
@@ -66,13 +66,16 @@ Adjust API URLs in components if your backend runs on a different port or path.
 
 ## Scripts:
 ```bash
-npm start#Start the React development server
+npm start
+#Start the React development server
 ```
 ```bash
-npm run build#Build for production
+npm run build
+#Build for production
 ```
 ```bash
- npx json-server --watch [data.json](http://_vscodecontentref_/1) --port 3001#Start mock API server
+ npx json-server --watch [data.json](http://_vscodecontentref_/1) --port 3001
+#Start mock API server
 ```
 
 
