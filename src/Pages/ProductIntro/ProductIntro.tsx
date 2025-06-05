@@ -1,4 +1,4 @@
-import React, { ReactElement, useEffect, useState } from "react";
+import  { ReactElement, useEffect, useState } from "react";
 import clsx from "clsx"; // Utility for conditional class names
 import styles from "./ProductIntro.module.scss"; // Module-specific styles
 import { Col, Container, Row } from "react-bootstrap"; // Bootstrap components for layout

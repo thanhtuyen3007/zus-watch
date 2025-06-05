@@ -1,4 +1,3 @@
-import React from "react";
 import clsx from "clsx";
 import styles from "./OurBrand.module.scss";
 import { Container, Row, Col } from "react-bootstrap";
