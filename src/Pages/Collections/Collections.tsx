@@ -5,12 +5,13 @@ import TitleSection from "../../components/TitleSection/TitleSection";
 import axios from "axios";
 import { Banner } from "../../components/Banner/Banner";
 import { CollectionType } from "../../types/types";
+import { API_URL } from "../../config/api";
 const Collections = (): ReactElement => {
   const [collectionsList, setCollectionsList] = React.useState([]); // Initialize collectionsList state
 
   useEffect(() => {
     axios
-      .get("https://zuswatch-api.onrender.com/collections")
+      .get(`${API_URL}/collections`)
       .then((response) => {
         // console.log(response.data); // Log the fetched data for debugging purposes
         setCollectionsList(response.data); // Set the collectionsList state with the fetched data

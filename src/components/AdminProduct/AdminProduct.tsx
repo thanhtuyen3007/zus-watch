@@ -6,11 +6,12 @@ import { Col, Container, Row } from "react-bootstrap";
 
 import { ImageProduct } from "../ImageProduct/ImageProduct";
 import { WatchType } from "../../types/types";
+import { API_URL } from "../../config/api";
 
 const AdminProduct = () => {
   const [products, setProducts] = useState<WatchType[]>([]);
   useEffect(() => {
-    axios.get("https://zuswatch-api.onrender.com/products").then((response) => {
+    axios.get(`${API_URL}/products`).then((response) => {
       setProducts(response.data);
     });
   }, []);

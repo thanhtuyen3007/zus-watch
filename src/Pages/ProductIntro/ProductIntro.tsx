@@ -8,6 +8,7 @@ import { WatchType } from "../../types/types"; // Type definition for a watch pr
 import axios from "axios"; // HTTP client for API requests
 import { useDispatch } from "react-redux"; // Redux hook for dispatching actions
 import { addToCart } from "../Cart/cartSlice"; // Action to add a product to the cart
+import { API_URL } from "../../config/api";
 
 // Functional component for displaying product details
 const ProductIntro = (): ReactElement => {
@@ -28,7 +29,7 @@ const ProductIntro = (): ReactElement => {
     if (!id) return; // Exit if no ID is provided
 
     axios
-      .get(`https://zuswatch-api.onrender.com/products?id=${id}`) // Fetch product details by ID
+      .get(`${API_URL}/collections?id=${id}`) // Fetch product details by ID
       .then((res) => {
         const productItem = res.data.find((item: WatchType) => item.id === id); // Find the product in the response
         setProduct(productItem || null); // Update the state with the product details

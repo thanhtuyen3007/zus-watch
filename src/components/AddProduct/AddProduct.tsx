@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import UploadImage from "../UploadImage/UploadImage"; // Component for uploading product images
 import axios from "axios"; // HTTP client for API requests
 import { CollectionType, WatchType } from "../../types/types"; // Type definitions for collections and products
+import { API_URL } from "../../config/api";
 
 // Functional component for adding a new product
 const AddProduct = () => {
@@ -38,12 +39,12 @@ const AddProduct = () => {
   // Fetch collections and products when the component mounts
   useEffect(() => {
     axios
-      .get("https://zuswatch-api.onrender.com/collections") // Fetch collections
+      .get(`${API_URL}/collections`) // Fetch collections
       .then((res) => setCollections(res.data))
       .catch((err) => console.error("Failed to load collections", err));
 
     axios
-      .get("https://zuswatch-api.onrender.com/products") // Fetch products
+      .get(`${API_URL}/products`) // Fetch products
       .then((res) => setProduct(res.data))
       .catch((err) => console.error("Failed to load products", err));
   }, []);
@@ -91,7 +92,7 @@ const AddProduct = () => {
 
     // Send a POST request to add the new product
     axios
-      .post("https://zuswatch-api.onrender.com/products", newProduct)
+      .post(`${API_URL}/products`, newProduct)
       .then((response) => {
         console.log("Product added successfully:", response.data);
 

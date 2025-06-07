@@ -5,6 +5,7 @@ import clsx from "clsx"; // Import clsx for conditional class management
 import { Container } from "react-bootstrap";
 import styles from "./Watches.module.scss";
 import ListProducts from "../../components/ListProducts/ListProducts";
+import { API_URL } from "../../config/api";
 
 const Watches = (): ReactElement => {
   const location = useLocation(); // Get the current URL information
@@ -21,7 +22,7 @@ const Watches = (): ReactElement => {
 
     // Fetch collection info
     axios
-      .get(`https://zuswatch-api.onrender.com/collections/${collectionId}`)
+      .get(`${API_URL}/collections${collectionId}`)
       .then((res) => {
         const collection = res.data;
         setTitleCollection(collection.name);
@@ -34,9 +35,7 @@ const Watches = (): ReactElement => {
 
     // Fetch products in the collection
     axios
-      .get(
-        `https://zuswatch-api.onrender.com/products?collectionId=${collectionId}`
-      )
+      .get(`${API_URL}/products?collectionId=${collectionId}`)
       .then((res) => {
         console.log(res.data); // Log the fetched data for debugging
         setDataProducts(res.data);
