@@ -10,7 +10,7 @@ import { WatchType } from "../../types/types";
 const AdminProduct = () => {
   const [products, setProducts] = useState<WatchType[]>([]);
   useEffect(() => {
-    axios.get("http://localhost:3001/products").then((response) => {
+    axios.get("https://zuswatch-api.onrender.com/products").then((response) => {
       setProducts(response.data);
     });
   }, []);

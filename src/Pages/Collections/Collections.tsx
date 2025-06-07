@@ -10,7 +10,7 @@ const Collections = (): ReactElement => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/collections")
+      .get("https://zuswatch-api.onrender.com/collections")
       .then((response) => {
         // console.log(response.data); // Log the fetched data for debugging purposes
         setCollectionsList(response.data); // Set the collectionsList state with the fetched data

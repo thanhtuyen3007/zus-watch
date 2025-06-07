@@ -21,7 +21,7 @@ const Watches = (): ReactElement => {
 
     // Fetch collection info
     axios
-      .get(`http://localhost:3001/collections/${collectionId}`)
+      .get(`https://zuswatch-api.onrender.com/collections/${collectionId}`)
       .then((res) => {
         const collection = res.data;
         setTitleCollection(collection.name);
@@ -34,7 +34,9 @@ const Watches = (): ReactElement => {
 
     // Fetch products in the collection
     axios
-      .get(`http://localhost:3001/products?collectionId=${collectionId}`)
+      .get(
+        `https://zuswatch-api.onrender.com/products?collectionId=${collectionId}`
+      )
       .then((res) => {
         console.log(res.data); // Log the fetched data for debugging
         setDataProducts(res.data);

@@ -38,12 +38,12 @@ const AddProduct = () => {
   // Fetch collections and products when the component mounts
   useEffect(() => {
     axios
-      .get("http://localhost:3001/collections") // Fetch collections
+      .get("https://zuswatch-api.onrender.com/collections") // Fetch collections
       .then((res) => setCollections(res.data))
       .catch((err) => console.error("Failed to load collections", err));
 
     axios
-      .get("http://localhost:3001/products") // Fetch products
+      .get("https://zuswatch-api.onrender.com/products") // Fetch products
       .then((res) => setProduct(res.data))
       .catch((err) => console.error("Failed to load products", err));
   }, []);
@@ -57,21 +57,24 @@ const AddProduct = () => {
     const { name, value, type } = e.target;
     let newValue: string | number = value;
     // Convert value to number if the input type is number
-    if (type === "number") {  // Check if the input type is number
-      newValue = parseFloat(value);// Convert the value to a number
+    if (type === "number") {
+      // Check if the input type is number
+      newValue = parseFloat(value); // Convert the value to a number
     } else {
       newValue = value; // Otherwise, keep it as a string
     }
 
     setFormData({
       ...formData,
-      [name]: newValue,// Update the formData state with the new value
+      [name]: newValue, // Update the formData state with the new value
     });
   };
 
   // Generate a new unique ID for the product
   const generateNewId = () => {
-    const productId = product.map((productItem) => parseInt(productItem.id.replace("w", "")));// Extract numeric IDs from existing products
+    const productId = product.map((productItem) =>
+      parseInt(productItem.id.replace("w", ""))
+    ); // Extract numeric IDs from existing products
     // Find the maximum ID and increment it for the new product
     const maxId = productId.length > 0 ? Math.max(...productId) : 0;
     return `w${maxId + 1}`; // Generate a new ID
@@ -88,7 +91,7 @@ const AddProduct = () => {
 
     // Send a POST request to add the new product
     axios
-      .post("http://localhost:3001/products", newProduct)
+      .post("https://zuswatch-api.onrender.com/products", newProduct)
       .then((response) => {
         console.log("Product added successfully:", response.data);
 

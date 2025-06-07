@@ -1,4 +1,4 @@
-import  { ReactElement, useEffect, useState } from "react";
+import { ReactElement, useEffect, useState } from "react";
 import clsx from "clsx"; // Utility for conditional class names
 import styles from "./ProductIntro.module.scss"; // Module-specific styles
 import { Col, Container, Row } from "react-bootstrap"; // Bootstrap components for layout
@@ -28,7 +28,7 @@ const ProductIntro = (): ReactElement => {
     if (!id) return; // Exit if no ID is provided
 
     axios
-      .get(`http://localhost:3001/products?id=${id}`) // Fetch product details by ID
+      .get(`https://zuswatch-api.onrender.com/products?id=${id}`) // Fetch product details by ID
       .then((res) => {
         const productItem = res.data.find((item: WatchType) => item.id === id); // Find the product in the response
         setProduct(productItem || null); // Update the state with the product details
