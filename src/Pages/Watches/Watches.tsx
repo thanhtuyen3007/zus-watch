@@ -1,47 +1,45 @@
 import { ReactElement, useEffect, useState } from "react";
-import { useLocation } from "react-router-dom"; // Import useLocation for accessing query parameters
+import { useLocation } from "react-router-dom";
 import axios from "axios";
-import clsx from "clsx"; // Import clsx for conditional class management
+import clsx from "clsx";
 import { Container } from "react-bootstrap";
 import styles from "./Watches.module.scss";
 import ListProducts from "../../components/ListProducts/ListProducts";
-import { API_URL } from "../../config/api";
 
 const Watches = (): ReactElement => {
-  const location = useLocation(); // Get the current URL information
-  const queryParams = new URLSearchParams(location.search); // Convert the query string into an object for easier reading
-  const collectionId = queryParams.get("collectionId"); // Get the value of "collectionId"
+  const location = useLocation();
+  const queryParams = new URLSearchParams(location.search);
+  const collectionId = queryParams.get("collectionId");
 
-  const [dataProducts, setDataProducts] = useState([]); // State to store the list of products
-  const [titleCollection, setTitleCollection] = useState(""); // State to store the title of the collection
-  const [descriptionCollection, setDescriptionCollection] = useState(""); // State to store the description of the collection
-  const [imageCollection, setImageCollection] = useState(""); // State to store the image of the collection
+  const [dataProducts, setDataProducts] = useState([]);
+  const [titleCollection, setTitleCollection] = useState("");
+  const [descriptionCollection, setDescriptionCollection] = useState("");
+  const [imageCollection, setImageCollection] = useState("");
 
   useEffect(() => {
     if (!collectionId) return;
 
-    // Fetch collection info
     axios
-      .get(`${API_URL}/collections${collectionId}`)
+      .get("/data.json")
       .then((res) => {
-        const collection = res.data;
-        setTitleCollection(collection.name);
-        setDescriptionCollection(collection.description);
-        setImageCollection(collection.image);
-      })
-      .catch((err) => {
-        console.error("Error fetching collection:", err);
-      });
+        const collections = res.data.collections;
+        const products = res.data.products;
 
-    // Fetch products in the collection
-    axios
-      .get(`${API_URL}/products?collectionId=${collectionId}`)
-      .then((res) => {
-        console.log(res.data); // Log the fetched data for debugging
-        setDataProducts(res.data);
+        const collection = collections.find((col: { id: string; }) => col.id === collectionId);
+        const productsInCollection = products.filter(
+          (p: { collectionId: string; }) => p.collectionId === collectionId
+        );
+
+        if (collection) {
+          setTitleCollection(collection.name);
+          setDescriptionCollection(collection.description);
+          setImageCollection(collection.image);
+        }
+
+        setDataProducts(productsInCollection);
       })
       .catch((err) => {
-        console.error("Error fetching watches:", err);
+        console.error("Error loading data.json:", err);
       });
   }, [collectionId]);
 

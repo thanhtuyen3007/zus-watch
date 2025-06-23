@@ -14,10 +14,8 @@ $navLink-width: clamp(
   z-index: 9; // Ensure the header is above other elements
   padding: 0;
   width: 100%; // Set width to 100%
-  height: height.$header-height; // Set height from imported variable
-  max-height: height.$header-height; // Set maximum height from imported variable
   background-color: color.$primaryColor; // Set background color from imported variable
-  color: #fff; // Set text color to white
+  color: color.$textWhite; // Set text color to white
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -33,7 +31,7 @@ $navLink-width: clamp(
   .logo {
     padding: 10px;
     font-family: "Playfair Display"; // Set font family
-    font-size: 3.2rem; // Set font size
+    font-size: 3rem; // Set font size
     font-style: normal;
     font-weight: 600; // Set font weight
     line-height: normal;
@@ -75,14 +73,15 @@ $navLink-width: clamp(
 
     .navItemLink {
       display: block;
-      padding: calc((height.$header-height/2) - 1.6rem) 5px;
+      padding-right: 4px;
+      padding-left: 4px;
       font-family: Lato; // Set font family
       font-size: 1.8rem; // Set font size
       text-transform: capitalize; // Capitalize text
       color: color.$textWhite; // Set link color from imported variable
       &:hover {
-        color: color.$textBlack; // Change color on hover
-        background-color: color.$hoverColor; // Change background color on hover
+        color: color.$textYellow; // Change color on hover
+        // background-color: color.$hoverColor; // Change background color on hover
       }
     }
   }
@@ -99,7 +98,7 @@ $navLink-width: clamp(
 
     .collapse {
       position: fixed; // Fix the collapse menu at the top
-      top: height.$header-height; // Set top position from imported variable
+      top: 6rem; // Set top position from imported variable
       left: 0;
       right: 0;
       display: none; // Hide collapse menu by default on small screens
@@ -121,7 +120,7 @@ $navLink-width: clamp(
         display: block;
         padding: 1rem;
         width: 100%; // Set width to 100% for links
-        color: color.$blue;
+        color: color.$textBlue;
       }
     }
   }

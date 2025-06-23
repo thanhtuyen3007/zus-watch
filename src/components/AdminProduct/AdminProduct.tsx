@@ -6,13 +6,13 @@ import { Col, Container, Row } from "react-bootstrap";
 
 import { ImageProduct } from "../ImageProduct/ImageProduct";
 import { WatchType } from "../../types/types";
-import { API_URL } from "../../config/api";
+
 
 const AdminProduct = () => {
   const [products, setProducts] = useState<WatchType[]>([]);
   useEffect(() => {
-    axios.get(`${API_URL}/products`).then((response) => {
-      setProducts(response.data);
+    axios.get('data.json').then((response) => {
+      setProducts(response.data.products);
     });
   }, []);
 
@@ -21,7 +21,7 @@ const AdminProduct = () => {
       <h2 className={clsx(styles.title)}>All Watch Product</h2>
       <Container>
         <Row>
-          {products.map((product, index) => (
+          {products?.map((product, index) => (
             <Col key={index} xs={6} md={4}>
               <div className={clsx(styles.container)}>
                 <ImageProduct

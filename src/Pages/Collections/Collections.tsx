@@ -5,16 +5,16 @@ import TitleSection from "../../components/TitleSection/TitleSection";
 import axios from "axios";
 import { Banner } from "../../components/Banner/Banner";
 import { CollectionType } from "../../types/types";
-import { API_URL } from "../../config/api";
+
 const Collections = (): ReactElement => {
   const [collectionsList, setCollectionsList] = React.useState([]); // Initialize collectionsList state
 
   useEffect(() => {
     axios
-      .get(`${API_URL}/collections`)
+      .get("/data.json") // Fetch data from the JSON file
       .then((response) => {
         // console.log(response.data); // Log the fetched data for debugging purposes
-        setCollectionsList(response.data); // Set the collectionsList state with the fetched data
+        setCollectionsList(response.data.collections); // Set the collectionsList state with the fetched data
       })
       .catch((error) => {
         console.error("Error fetching collections:", error); // Handle any errors that occur during the request

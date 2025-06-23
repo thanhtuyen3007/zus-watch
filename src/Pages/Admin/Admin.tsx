@@ -9,11 +9,11 @@ const Admin = (): ReactElement => {
       <nav className={clsx(styles.sidebar)}>
         <h3 className={clsx(styles.sidebarTitle)}>Admin Dashboard</h3>
         <ul className={clsx(styles.navList)}>
+          <Link to={"/admin/products"} className={clsx(styles.navItem)}>
+            All Product
+          </Link>
           <Link to={"/admin/add-product"} className={clsx(styles.navItem)}>
             Add Product
-          </Link>
-          <Link to={"/admin/products"} className={clsx(styles.navItem)}>
-            product list
           </Link>
           <Link to={"/"} className={clsx(styles.navItem)}>
             Orders

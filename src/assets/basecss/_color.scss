@@ -1,17 +1,21 @@
-$darkblue: #0d1f22;
-$smoky-gray: #d9d9d9;
-$black: #292929;
-$blue: #203c4f;
-$white: #fff;
-$darkgray: #333;
+// Tone màu tinh tế – sang trọng – trầm ấm
+$jetBlack: #1A1A1A;            // Đen trầm sang trọng – làm nền header/footer
+$champagneBeige: #E6D5B8;      // Be sáng – nền section sáng hoặc điểm nhấn nhẹ
+$darkOlive: #2F3A30;           // Xanh ô liu đậm – hover, border
+$chestnutBrown: #5D3A2E;       // Nâu đậm – tiêu đề, nút nhấn
+$pewterGrey: #A2A2A2;          // Xám trung tính – chữ phụ, icon
+$ivoryWhite: #F9F6F0;          // Trắng ngà – nền sáng
+$pureWhite: #FFFFFF;           // Trắng tinh – text nổi trên nền tối
 
-$primaryColor: $darkblue;
-$secondaryColor: $smoky-gray;
-$textPrimaryColor :$darkblue ;
-$textBlack: $black;
-$textBlue: $blue;
-$textWhite: $white;
-$textLink : #003399;
-$textDarkgray: $darkgray;
-$hoverColor: $smoky-gray;
-$borderColor: $smoky-gray;
+// Giữ nguyên tên biến từ đây trở xuống
+$primaryColor: $jetBlack;
+$secondaryColor: $ivoryWhite;
+$textPrimaryColor: $jetBlack;
+$textBlack: $chestnutBrown;
+$textBlue: $darkOlive;
+$textWhite: $pureWhite;
+$textGrey: $pewterGrey;
+$textYellow: $champagneBeige;
+$borderColor: $darkOlive; // Màu viền nhẹ nhàng
+$bgColorWhite: $ivoryWhite; // Màu nền chính
+$hoverColor: $champagneBeige; // Màu nền hover nhẹ nhàng
